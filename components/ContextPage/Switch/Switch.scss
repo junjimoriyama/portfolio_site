@@ -1,0 +1,66 @@
+@use "@/style/breakpoint.scss" as bp;
+
+.switch {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(#eee, #ccc, #eee);
+  border: 3px solid #000;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include bp.media(xs, max) {
+    transform: scale(0.8);
+  }
+
+  .btn {
+    position: relative;
+    width: 25px;
+    height: 40px;
+    background: linear-gradient(#777, #fff, #777);
+    border-radius: 6px;
+    border: 3px solid #000;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 85%;
+      background: linear-gradient(#fff, #fff);
+      border-radius: 3px;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 1px;
+      background-color: #9a9a9a;
+      border-radius: 10px;
+    }
+  }
+
+  &.switchOn {
+    .btn {
+      &::before {
+        top: 15%;
+      }
+
+      &::after {
+        content: '';
+        top: 55%;
+        height: 1.5px;
+      }
+    }
+  }
+}

@@ -1,8 +1,11 @@
+@use "@/style/breakpoint.scss" as bp;
+
 .hero_title {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 10;
 
   .hero_name {
     display: flex;
@@ -12,11 +15,17 @@
     font-family: Lato;
     letter-spacing: 0.2em;
 
+    @include bp.media(xs, max) {
+      font-size: 18px;
+    }
+
     .hero_name_word {
       position: relative;
       display: block;
       opacity: 0;
-      animation: .5s 2s forwards titleAnimation;
+      text-shadow: -1px -1px 0 #0a0a0a, 1px -1px 0 #0a0a0a, -1px 1px 0 #0a0a0a,
+        1px 1px 0 #0a0a0a; // 1pxの黒い縁をつける
+      animation: 0.5s 2s forwards titleAnimation;
     }
   }
 }
@@ -25,25 +34,33 @@
     filter: blur(10px);
     opacity: 0;
   }
-  
   100% {
     filter: blur();
     opacity: 1;
   }
 }
 
+.svg_title {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 
-  .svg_title {
+  @include bp.media(xs, max) {
+    gap: 15px;
+  }
+
+  .upper,
+  .lower {
     display: flex;
-    flex-direction: column;
-    gap: 30px;
+    align-items: center;
+    gap: 3px;
 
-    .upper, .lower {
-      display: flex;
-      align-items: center;
-      gap: 3px;
+    svg {
+      @include bp.media(xs, max) {
+        width: 30px;
+        height: 30px;
+      }
     }
-
     .path {
       animation: 2s linear forwards drawSvg;
 
@@ -171,6 +188,5 @@
       stroke-dasharray: 217;
       stroke-dashoffset: var(--dashoffset);
     }
-
-
   }
+}
