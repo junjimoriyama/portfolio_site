@@ -1,0 +1,182 @@
+
+:root {
+  --light-color: #fff;
+  --toggle-color: #828282;
+  --toggle-head-color: #dedede;
+}
+
+.light {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  animation: 4s 3s forwards visibleLight;
+
+  @keyframes visibleLight {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .wire {
+    position: absolute;
+    width: 4px;
+    height: 20vh;
+    background-color: #777;
+    top: -5%;
+    z-index: 1;
+    background-color: #8f8e8e;
+  }
+  
+  .light_bulb {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    background-color: var(--light-color);
+    border-radius: 50%;
+    z-index: 2;
+    top: -30%;
+  
+    &.lightOff {
+      --light-color: #8f8e8e;
+    }
+  
+    &::before {
+      position: absolute;
+      content: '';
+      width: 35px;
+      height: 80px;
+      background-color: var(--light-color);
+      ;
+      border-radius: 10px;
+      left: 27.5%;
+      top: -50px;
+      border-top: 30px solid #222;
+    }
+  
+    &::after {
+      position: absolute;
+      content: '';
+      width: 140px;
+      height: 140px;
+      background-color: var(--light-color);
+      border-radius: 50%;
+      top: 50%;
+      left: 0%;
+      filter: blur(40px);
+      transform: translate(-18%, -40%);
+      box-shadow:
+        0 0 10px var(--light-color),
+        0 0 30px var(--light-color),
+        0 0 60px var(--light-color),
+        0 0 120px var(--light-color),
+        0 0 200px var(--light-color);
+    }
+  
+    &.lightOff {
+      &::after {
+        box-shadow: none;
+        filter: blur(1000px);
+      }
+    }
+  
+    span {
+      &:nth-child(1) {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        box-shadow: 20px 20px 0 10px var(--light-color);
+        ;
+        border-bottom-right-radius: 40px;
+        transform: rotate(342deg);
+        top: -16px;
+        left: -4px;
+      }
+  
+      &:nth-child(2) {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        box-shadow: -20px 20px 0 10px var(--light-color);
+        ;
+        border-bottom-left-radius: 40px;
+        transform: rotate(16deg);
+        top: -16px;
+        right: -3.4px;
+      }
+    }
+  }
+  
+  .switch {
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(#eee, #ccc, #eee);
+    border: 3px solid #000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .btn {
+      position: relative;
+      width: 25px;
+      height: 40px;
+      background: linear-gradient(#777, #fff, #777);
+      border-radius: 6px;
+      border: 3px solid #000;
+      cursor: pointer;
+  
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 85%;
+        background: linear-gradient(#fff, #fff);
+        border-radius: 3px;
+      }
+  
+      &::after {
+        content: '';
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 1px;
+        background-color: #9a9a9a;
+        border-radius: 10px;
+      }
+    }
+  
+    &.switchOn {
+      .btn {
+        &::before {
+          top: 15%;
+        }
+  
+        &::after {
+          content: '';
+          top: 55%;
+          height: 1.5px;
+        }
+      }
+    }
+  }
+}

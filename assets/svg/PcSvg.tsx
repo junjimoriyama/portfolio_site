@@ -1,0 +1,67 @@
+export const PcSvg = () => {
+  return (
+    <svg
+    id="pc_svg"
+    className="pc_svg"
+    data-name="pc_svg"
+    xmlns="http://www.w3.org/2000/svg"
+    width="345.8"
+    height="303.8"
+    version="1.1"
+    viewBox="0 0 345.8 303.8"
+  >
+    <g>
+      <rect
+        x="-439.1"
+        y="103.1"
+        width="311.6"
+        height="208.5"
+        rx="24.1"
+        ry="24.1"
+        fill="#999"
+        stroke="#999"
+        strokeMiterlimit="10"
+        strokeWidth="14.1"
+      ></rect>
+      <path
+        d="M-414.7,103.1H-151.9c13.5,0,24.4,11.1,24.4,24.7v6.8h-311.5v-6.8c0-13.6,10.9-24.7,24.4-24.7h0Z"
+        fill="#999"
+      ></path>
+      <path
+        d="M-151.8,311.6h-262.8c-13.5,0-24.4-11.1-24.4-24.7v-6.8H-127.5v6.8c0,13.6-10.9,24.7-24.4,24.7h0Z"
+        fill="#999"
+      ></path>
+    </g>
+    <rect
+      x="-408.8"
+      y="344.3"
+      width="300"
+      height="168.8"
+      fill="#fff"
+      stroke="#fff"
+      strokeMiterlimit="10"
+    ></rect>
+    <g>
+      <path
+        d="M317.2,213H28.1c-11.2,0-20.3-9.1-20.3-20.3V28.2c0-11.2,9.1-20.3,20.3-20.3h289.1c11.2,0,20.3,9.1,20.3,20.3v164.4c0,11.2-9.1,20.3-20.3,20.3ZM322.7,25.2H22.7v168.8h300V25.2Z"
+        fill="#999"
+        stroke="#fff"
+        strokeMiterlimit="10"
+        strokeWidth=".8"
+      ></path>
+      <rect
+        x="124.4"
+        y="201.4"
+        width="96.6"
+        height="59.2"
+        fill="#999"
+      ></rect>
+      <path
+        d="M284.3,295.9H58c-2.3,0-3.4-3.3-1.6-5l40-37.5c1.4-1.3,3.4-2.1,5.3-2.1l142.4.2c2.1,0,4.1.8,5.6,2.3l36.2,37.1c1.7,1.7.6,4.9-1.7,4.9Z"
+        fill="#999"
+      ></path>
+      <circle cx="172.7" cy="233.9" r="11.5" fill="#fff"></circle>
+    </g>
+  </svg>
+  )
+}

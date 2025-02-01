@@ -1,0 +1,176 @@
+.hero_title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .hero_name {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 5px;
+    font-family: Lato;
+    letter-spacing: 0.2em;
+
+    .hero_name_word {
+      position: relative;
+      display: block;
+      opacity: 0;
+      animation: .5s 2s forwards titleAnimation;
+    }
+  }
+}
+@keyframes titleAnimation {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+  }
+  
+  100% {
+    filter: blur();
+    opacity: 1;
+  }
+}
+
+
+  .svg_title {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .upper, .lower {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .path {
+      animation: 2s linear forwards drawSvg;
+
+      @keyframes drawSvg {
+        0% {
+          stroke-dashoffset: var(--dashoffset);
+          fill: none;
+        }
+        85% {
+          stroke-dashoffset: 0;
+          fill: none;
+        }
+        90% {
+          fill: none;
+        }
+        100% {
+          stroke-dashoffset: var(--dashoffset);
+          fill: var(--fill);
+        }
+      }
+    }
+
+    .ellipse {
+      --dashoffset: 124;
+      --fill: #80b9ad;
+      stroke-dasharray: 124;
+      stroke-dashoffset: var(--dashoffset);
+      animation: 2s linear forwards drawSvg;
+    }
+
+    .path1 {
+      --dashoffset: 151;
+      --fill: #538392;
+      stroke-dasharray: 151;
+      stroke-dashoffset: var(--dashoffset);
+    }
+
+    .path2 {
+      --dashoffset: 21;
+      --fill: #0a0a0a;
+      stroke-dasharray: 21;
+      stroke-dashoffset: var(--dashoffset);
+    }
+
+    .path3 {
+      --dashoffset: 39;
+      --fill: #0a0a0a;
+      stroke-dasharray: 39;
+      stroke-dashoffset: var(--dashoffset);
+    }
+
+    .path4 {
+      --dashoffset: 754;
+      --fill: #b3e2a7;
+      stroke-dasharray: 754;
+      stroke-dashoffset: var(--dashoffset);
+    }
+
+    .path5 {
+      --dashoffset: 217;
+      --fill: #80b9ad;
+      stroke-dasharray: 217;
+      stroke-dashoffset: var(--dashoffset);
+    }
+
+    .path6 {
+      --dashoffset: 585;
+      --fill: #fff;
+      stroke-dasharray: 585;
+      stroke-dashoffset: var(--dashoffset);
+    }
+
+    .path7 {
+      --dashoffset: 39;
+      --fill: #0a0a0a;
+      stroke-dasharray: 39;
+      stroke-dashoffset: var(--dashoffset);
+    }
+
+    .path8 {
+      --dashoffset: 622;
+      --fill: #b3e2a7;
+      stroke-dasharray: 622;
+      stroke-dashoffset: var(--dashoffset);
+    }
+
+    .path9 {
+      --dashoffset: 511;
+      --fill: #fff;
+      stroke-dasharray: 511;
+      stroke-dashoffset: var(--dashoffset);
+    }
+
+    .path10 {
+      --dashoffset: 39;
+      --fill: #0a0a0a;
+      stroke-dasharray: 39;
+      stroke-dashoffset: var(--dashoffset);
+    }
+
+    .path11 {
+      --dashoffset: 210;
+      --fill: #fff;
+      stroke-dasharray: 210;
+      stroke-dashoffset: var(--dashoffset);
+    }
+
+    .path12 {
+      --dashoffset: 511;
+      --fill: #fff;
+      stroke-dasharray: 511;
+      stroke-dashoffset: var(--dashoffset);
+    }
+
+    .path13 {
+      --dashoffset: 217;
+      --fill: #80b9ad;
+      stroke-dasharray: 217;
+      stroke-dashoffset: var(--dashoffset);
+    }
+
+    .path14 {
+      --dashoffset: 217;
+      --fill: #80b9ad;
+      stroke-dasharray: 217;
+      stroke-dashoffset: var(--dashoffset);
+    }
+
+
+  }
