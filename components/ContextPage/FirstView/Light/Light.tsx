@@ -2,11 +2,15 @@
 
 import { useRef, useState } from "react";
 import "./Light.scss";
+import { useSwitchContext } from "@/components/context/switchProvider";
 
 export const Light = () => {
 
-  // スイッチON OFF
-  const [isSwitchOn, setIsSwitchOn] = useState(false);
+  const { isSwitchOn, setIsSwitchOn} = useSwitchContext()
+
+  console.log(isSwitchOn)
+  console.log(useSwitchContext());
+
 
   // switchボタン
   const switchRef = useRef<null | HTMLDivElement>(null);
