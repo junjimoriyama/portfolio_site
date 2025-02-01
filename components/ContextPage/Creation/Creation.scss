@@ -1,40 +1,90 @@
 .creation {
+  max-width: 1000px;
   width: 100%;
   height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  // flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  place-items: center;
+  column-gap: 30px;
+  row-gap: 20px;
 
-  .photo_site, .todo_app {
+  .creation_item {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-    .photo_site_img {
-      position: absolute;
-      top: 0px;
-      // top: 233px;
-      // left: 50%;
-      // transform: translate(-50%, -50%);
-      width: 302px;
-      height: 170px;
-      object-fit: cover;
-      visibility: hidden;
-      opacity: 0;
-      pointer-events: none;
-
-      &.isOn {
-        animation: onScreen 2s forwards;
-        pointer-events: auto;
+    svg {
+      margin-bottom: 20px;
+    }
+    
+.creation_item_image {
+  transition: .3s;
+  @media (any-hover: hover) {
+    &:hover {
+      opacity: 0.5;
       }
-      @keyframes onScreen {
-        0% {
-          opacity: 0;
-          visibility: hidden;
-        } 100% {
-          opacity: 1;
-          visibility: visible;
-        }
+    }
+  .photo_site_img {
+    position: absolute;
+    top: 25px;
+    left: 21px;
+    width: 302px;
+    height: 170px;
+    object-fit: cover;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+
+
+    &.isOn {
+      animation: onScreen 2s forwards;
+      pointer-events: auto;
+    }
+    @keyframes onScreen {
+      0% {
+        opacity: 0;
+        visibility: hidden;
+      } 100% {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    &.isOff {
+      animation: offScreen 0.5s forwards;
+      pointer-events: auto;
+      opacity: 0;
+      visibility: visible;
+    }
+    @keyframes offScreen {
+      0% {
+        opacity: 1;
+        visibility: visible;
+      } 100% {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+  }
+
+}
+
+    .creation_item_off {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .creation_item_about {
+      display: flex;
+      justify-content: center;
+
+      .creation_item_item {
+        font-weight: 600;
+        font-family: Lato;
+        font-size: 18px;
       }
     }
   }

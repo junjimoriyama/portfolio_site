@@ -2,8 +2,8 @@
 
 .light {
   --light-color: #fff;
-  --toggle-color: #828282;
-  --toggle-head-color: #dedede;
+  --dark-color: #8f8e8e;
+  --shadow-color: #222;
   position: absolute;
   top: 50px;
   left: 50%;
@@ -11,7 +11,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // animation: 4s 3s forwards visibleLight;
+  opacity: 0;
+  visibility: hidden;
+  animation: 4s 3s forwards visibleLight;
 
   @include bp.media(xs, max) {
     transform: scale(0.6);
@@ -33,53 +35,56 @@
     position: absolute;
     width: 4px;
     height: 50px;
-    background-color: #777;
+    background-color: var(--dark-color);
     top: -70px;
     z-index: 1;
-    background-color: #8f8e8e;
   }
   
   .light_bulb {
     position: absolute;
     top: 30px;
-    // --light-color: #8f8e8e;
-    background-color:#fff;
+    background-color: var(--dark-color);
     width: 80px;
     height: 80px;
     border-radius: 50%;
     z-index: 2;
-    
-    &.isLightOn {
-      background-color: var(--light-color);
-    }
-  
-    &::before {
+    transition: .5s;
+
+    &::before,
+    &::after {
       position: absolute;
-      content: '';
+      content: "";
+      transition: .5s;
+    }
+
+    &::before {
       width: 35px;
       height: 80px;
-      background-color: var(--light-color);
+      background-color: var(--dark-color);
       border-radius: 10px;
       left: 27.5%;
       top: -50px;
-      border-top: 30px solid #222;
+      border-top: 30px solid var(--shadow-color);
     }
-  
+
     &::after {
-      position: absolute;
-      content: '';
-      width: 140px;
+      width: 160px;
       height: 140px;
       border-radius: 50%;
       top: 50%;
       left: 0%;
-      filter: blur(40px);
-      transform: translate(-18%, -40%);
+      filter: blur(30px);
+      transform: translate(-23%, -40%);
       box-shadow: none;
-      // filter: blur(1000px);
     }
-    
+
     &.isLightOn {
+      background-color: var(--light-color);
+
+      &::before {
+        background-color: var(--light-color);
+      }
+
       &::after {
         background-color: var(--light-color);
         box-shadow:
@@ -89,16 +94,26 @@
           0 0 120px var(--light-color),
           0 0 200px var(--light-color);
       }
+
+      span {
+        &:nth-child(1) {
+          box-shadow: 20px 20px 0 10px var(--light-color);
+        }
+        &:nth-child(2) {
+          box-shadow: -20px 20px 0 10px var(--light-color);
+        }
+      }
     }
   
     span {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+      transition: .5s;
+
       &:nth-child(1) {
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        background-color: transparent;
-        box-shadow: 20px 20px 0 10px var(--light-color);
-        ;
+        box-shadow: 20px 20px 0 10px var(--dark-color);
         border-bottom-right-radius: 40px;
         transform: rotate(342deg);
         top: -16px;
@@ -106,12 +121,7 @@
       }
   
       &:nth-child(2) {
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        background-color: transparent;
-        box-shadow: -20px 20px 0 10px var(--light-color);
-        ;
+        box-shadow: -20px 20px 0 10px var(--dark-color);
         border-bottom-left-radius: 40px;
         transform: rotate(16deg);
         top: -16px;

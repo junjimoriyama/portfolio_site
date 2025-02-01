@@ -25,7 +25,12 @@
       opacity: 0;
       text-shadow: -1px -1px 0 #0a0a0a, 1px -1px 0 #0a0a0a, -1px 1px 0 #0a0a0a,
         1px 1px 0 #0a0a0a; // 1pxの黒い縁をつける
-      animation: 0.5s 2s forwards titleAnimation;
+        @for $i from 1 through 14 {
+          &:nth-of-type(#{$i}) {
+        animation: 1s #{1.8 + ($i * 0.1)}s forwards titleAnimation;
+      }
+    }
+
     }
   }
 }

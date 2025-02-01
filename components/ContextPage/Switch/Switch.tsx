@@ -18,7 +18,7 @@ export const Switch = () => {
       setIsSwitchOn(!isSwitchOn);
     }}
   >
-    <div className="btn"></div>
+    <div className="switchBtn"></div>
   </div>
   )
 }
