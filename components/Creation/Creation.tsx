@@ -11,6 +11,10 @@ export const Creation = () => {
       <PcSvg />
       <img className="photo_site_img" src="/images/photosite.png" alt="photo_site画像" width={302} height={170}/>
       </div>
+      <div className="photo_site">
+      <PcSvg />
+      <img className="photo_site_img" src="/images/todo.png" alt="photo_site画像" width={302} height={170}/>
+      </div>
     </div>
   );
 };
