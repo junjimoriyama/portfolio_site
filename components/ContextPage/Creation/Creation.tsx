@@ -9,7 +9,6 @@ export const Creation = () => {
 
   const {isSwitchOn, setIsSwitchOn} = useSwitchContext()
 
-  // console.log(isSwitchOn)
   return (
     <div className="creation">
       <div className="photo_site">
@@ -18,7 +17,11 @@ export const Creation = () => {
       </div>
       <div className="todo_app">
       <PcSvg />
-      <Image className="photo_site_img" src="/images/todo.png" alt="photo_site画像" width={302} height={170}/>
+      {
+        isSwitchOn &&
+        <Image className={`photo_site_img ${isSwitchOn ? "isOn" : ""}`} src="/images/todo.png" alt="photo_site画像" width={302} height={170}/>
+
+      }
       </div>
     </div>
   );

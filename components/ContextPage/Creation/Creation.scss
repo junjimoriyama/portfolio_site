@@ -23,6 +23,23 @@
       width: 302px;
       height: 170px;
       object-fit: cover;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+
+      &.isOn {
+        animation: onScreen 2s forwards;
+        pointer-events: auto;
+      }
+      @keyframes onScreen {
+        0% {
+          opacity: 0;
+          visibility: hidden;
+        } 100% {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
     }
   }
 }
