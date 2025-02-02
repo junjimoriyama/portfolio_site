@@ -44,8 +44,8 @@ export const Creation = () => {
               className={`thumbnail_img ${imageState}`}
               src="/images/stuttering.png"
               alt="photo_site画像"
-              width={300}
-              height={169}
+              width={310}
+              height={173}
               quality={100}
             />
           </Link>
@@ -79,8 +79,8 @@ export const Creation = () => {
               className={`thumbnail_img ${imageState}`}
               src="/images/photosite.png"
               alt="photo_site画像"
-              width={300}
-              height={169}
+              width={310}
+              height={173}
               quality={100}
             />
           </Link>
@@ -112,8 +112,8 @@ export const Creation = () => {
               className={`thumbnail_img ${imageState}`}
               src="/images/todo.png"
               alt="todoの画像"
-              width={300}
-              height={169}
+              width={310}
+              height={173}
             />
           </Link>
         </div>

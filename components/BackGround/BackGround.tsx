@@ -7,6 +7,7 @@ import "./Background.scss";
 
 const ThreeJSBackground: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
+  const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
 
   useEffect(() => {
     if (!mountRef.current) return;
@@ -21,6 +22,7 @@ const ThreeJSBackground: React.FC = () => {
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     mountRef.current.appendChild(renderer.domElement);
+    rendererRef.current = renderer; // リファレンスに保存
 
     // パーティクル用のテクスチャをロード
     const textureLoader = new THREE.TextureLoader();
@@ -51,6 +53,18 @@ const ThreeJSBackground: React.FC = () => {
     const particleSystem = new THREE.Points(particles, particleMaterial);
     scene.add(particleSystem);
 
+    // リサイズ時に更新する関数
+    const onResize = () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+      renderer.setSize(width, height);
+      renderer.setPixelRatio(window.devicePixelRatio);
+    };
+
+    window.addEventListener("resize", onResize); // リサイズイベントを追加
+
     // アニメーションループ
     const animate = () => {
       requestAnimationFrame(animate);
@@ -62,8 +76,9 @@ const ThreeJSBackground: React.FC = () => {
 
     // クリーンアップ処理
     return () => {
-      if (mountRef.current) {
-        mountRef.current.removeChild(renderer.domElement);
+      window.removeEventListener("resize", onResize); // イベントリスナー削除
+      if (mountRef.current && rendererRef.current) {
+        mountRef.current.removeChild(rendererRef.current.domElement);
       }
     };
   }, []);

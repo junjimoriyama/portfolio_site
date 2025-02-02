@@ -40,8 +40,9 @@
       width: 310px;
       height: 172px;
       top: 25px;
-      left: 23px;
+      left: 18px;
       transition: 0.3s;
+      background-color: #0a0a0a;
       @media (any-hover: hover) {
         &:hover {
           opacity: 0.1;
