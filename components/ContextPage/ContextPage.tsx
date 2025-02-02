@@ -6,7 +6,7 @@ import { SwitchProvider } from '../context/switchProvider'
 import { FirstView } from './FirstView/FirstView';
 import { Creation } from './Creation/Creation';
 import { Switch } from './Switch/Switch';
-import {Background} from './BackGround/BackGround';
+import { Background } from './BackGround/BackGround';
 
 export const ContextPage = () => {
   return (

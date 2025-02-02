@@ -100,6 +100,7 @@ export const Creation = () => {
         </div>
       </div>
 
+      {/* Todo　App */}
       <div className="creation_item">
         <PcSvg />
         <div className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}>
@@ -131,7 +132,37 @@ export const Creation = () => {
         </div>
       </div>
 
-
+      {/* SUPER MARKET */}
+      <div className="creation_item">
+        <PcSvg />
+        <div className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}>
+        <Link
+            href="https://shopping-app-next-ten.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              className={`thumbnail_img ${imageState}`}
+              src="/images/superMarket.png"
+              alt="SUPER MARKETの画像"
+              width={310}
+              height={173}
+            />
+          </Link>
+        </div>
+        <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>VISIT</p>
+        <div className="creation_item_about">
+        <div className="creation_item_title">
+        SUPER MARKET
+          </div>
+          <div className="creation_item_type">
+            <span>APPLICATION</span>
+          </div>
+          <div className="creation_item_description">
+          仮想ショッピングサイト
+          </div>
+        </div>
+      </div>
 
     </div>
   );
