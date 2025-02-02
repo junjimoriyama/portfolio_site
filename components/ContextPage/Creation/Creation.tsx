@@ -32,7 +32,7 @@ export const Creation = () => {
     <div className="creation">
 
        {/* stuttering_job */}
-      <div className="creation_item photo_site">
+      <div className="creation_item">
         <PcSvg />
         <div className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}>
           <Link
@@ -67,7 +67,7 @@ export const Creation = () => {
       </div>
 
       {/* PHOTO SITE */}
-      <div className="creation_item photo_site">
+      <div className="creation_item">
         <PcSvg />
         <div className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}>
           <Link
@@ -100,11 +100,11 @@ export const Creation = () => {
         </div>
       </div>
 
-      <div className="creation_item todo_app">
+      <div className="creation_item">
         <PcSvg />
         <div className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}>
         <Link
-            href="https://junji-moriyama.com/"
+            href="https://task-management-lake-nine.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -133,20 +133,6 @@ export const Creation = () => {
 
 
 
-      {/* <div className="creation_item todo_app">
-        <div className="creation_item_image">
-          <PcSvg />
-          {isSwitchOn && (
-            <Image
-              className={`photo_site_img ${isSwitchOn ? "isOn" : ""}`}
-              src="/images/supermarket.png"
-              alt="photo_site画像"
-              width={302}
-              height={170}
-            />
-          )}
-        </div>
-      </div> */}
     </div>
   );
 };
