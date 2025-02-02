@@ -1,3 +1,5 @@
+@use "sass:map";
+
 // breakpoint.scss
 
 // ブレークポイント用のmap
@@ -13,7 +15,7 @@ $breakpoints: (
 
 // メディアクエリ生成
 @mixin media($breakpoint, $type: max) {
-  $size: map-get($breakpoints, $breakpoint);
+  $size: map.get($breakpoints, $breakpoint);
 
   // max-width
   @if $type == max {

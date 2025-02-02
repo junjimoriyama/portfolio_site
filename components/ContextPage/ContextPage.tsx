@@ -1,4 +1,3 @@
-"use client";
 
 // react
 import { SwitchProvider } from '../context/switchProvider'
