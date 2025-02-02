@@ -2,14 +2,14 @@
 
 
 .creation {
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
   // height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-items: center;
   column-gap: 30px;
-  row-gap: 50px;
+  row-gap: 100px;
 
   @include bp.media(xs, max) {
     grid-template-columns: repeat(1, 1fr);

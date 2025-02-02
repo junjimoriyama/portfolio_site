@@ -1,7 +1,9 @@
 "use client"
 
-import "./Light.scss";
+// react
 import { useSwitchContext } from "@/components/context/switchProvider";
+// style
+import "./Light.scss";
 
 export const Light = () => {
 
