@@ -1,6 +1,5 @@
 "use client"
 
-import { useRef, useState } from "react";
 import "./Light.scss";
 import { useSwitchContext } from "@/components/context/switchProvider";
 

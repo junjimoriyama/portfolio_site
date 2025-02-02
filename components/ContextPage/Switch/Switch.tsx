@@ -8,7 +8,7 @@ export const Switch = () => {
 
   const { isSwitchOn, setIsSwitchOn} = useSwitchContext()
   // switchボタン
-    const switchRef = useRef<null | HTMLDivElement>(null);
+  const switchRef = useRef<null | HTMLDivElement>(null);
 
   return (
     <div

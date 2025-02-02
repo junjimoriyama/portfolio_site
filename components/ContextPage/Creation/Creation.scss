@@ -1,12 +1,21 @@
+@use "@/style/breakpoint.scss" as bp;
+
+
 .creation {
   max-width: 1000px;
   width: 100%;
-  height: 100vh;
+  // height: 100vh;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   place-items: center;
   column-gap: 30px;
-  row-gap: 20px;
+  row-gap: 50px;
+
+  @include bp.media(xs, max) {
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 0;
+    row-gap: 0;
+  }
 
   .creation_item {
     position: relative;
@@ -14,61 +23,95 @@
     flex-direction: column;
     justify-content: center;
 
+    @include bp.media(sm, max) {
+      transform: scale(0.8);
+    }
+
+    @include bp.media(xs, max) {
+      transform: scale(0.7);
+    }
+
     svg {
       margin-bottom: 20px;
     }
-    
-.creation_item_image {
-  transition: .3s;
-  @media (any-hover: hover) {
-    &:hover {
-      opacity: 0.5;
+
+    .creation_item_image {
+      position: absolute;
+      width: 310px;
+      height: 172px;
+      top: 25px;
+      left: 23px;
+      transition: 0.3s;
+      @media (any-hover: hover) {
+        &:hover {
+          opacity: 0.1;
+        }
       }
-    }
-  .photo_site_img {
-    position: absolute;
-    top: 25px;
-    left: 21px;
-    width: 302px;
-    height: 170px;
-    object-fit: cover;
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
 
-
-    &.isOn {
-      animation: onScreen 2s forwards;
-      pointer-events: auto;
-    }
-    @keyframes onScreen {
-      0% {
-        opacity: 0;
+      .thumbnail_img {
+        object-fit: cover;
         visibility: hidden;
-      } 100% {
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-
-    &.isOff {
-      animation: offScreen 0.5s forwards;
-      pointer-events: auto;
-      opacity: 0;
-      visibility: visible;
-    }
-    @keyframes offScreen {
-      0% {
-        opacity: 1;
-        visibility: visible;
-      } 100% {
         opacity: 0;
-        visibility: hidden;
+        pointer-events: none;
+
+        &.isOn {
+          animation: onScreen 2s forwards;
+          pointer-events: auto;
+        }
+
+        @keyframes onScreen {
+          0% {
+            opacity: 0;
+            visibility: hidden;
+          }
+          100% {
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
+        &.isOff {
+          animation: offScreen 0.5s forwards;
+          pointer-events: auto;
+          opacity: 0;
+          visibility: visible;
+        }
+        @keyframes offScreen {
+          0% {
+            opacity: 1;
+            visibility: visible;
+          }
+          100% {
+            opacity: 0;
+            visibility: hidden;
+          }
+        }
       }
     }
-  }
+    .creation_item_visit {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      top: 110px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      font-family: Lato;
+      letter-spacing: 0.2em;
 
-}
+      &.isVisible {
+        display: block;
+        opacity: 0;
+      }
+    }
+
+    // creation_item_imageがホバーされた兄弟要素に変更
+    .creation_item_image:hover + .creation_item_visit {
+      &.isVisible {
+        opacity: 1;
+      }
+    }
 
     .creation_item_off {
       position: absolute;
@@ -79,12 +122,28 @@
 
     .creation_item_about {
       display: flex;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
+      gap: 10px;
 
-      .creation_item_item {
+      .creation_item_title {
         font-weight: 600;
         font-family: Lato;
         font-size: 18px;
+      }
+      .creation_item_type {
+        display: flex;
+        margin-bottom: 10px;
+        gap: 10px;
+        letter-spacing: 0.1em;
+        span {
+          padding: 3px 5px;
+          background-color: #fff;
+          color: #0a0a0a;
+          border-radius: 2px;
+          font-size: 14px;
+        }
       }
     }
   }

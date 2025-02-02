@@ -14,7 +14,15 @@
   align-items: center;
   opacity: 0;
   visibility: hidden;
-  animation: 4s 3s forwards visibleSwitch;
+  // animation: 4s 3s forwards visibleSwitch;
+
+  opacity: 1;
+  visibility: visible;
+
+  @include bp.media(xs, max) {
+    right: 10px;
+    bottom: 10px;
+  }
 
   @keyframes visibleSwitch {
     0% {

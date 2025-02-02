@@ -1,8 +1,8 @@
 "use client"
 
+// components
 import { HeroTitle } from './HeroTitle/HeroTitle'
 import { Light } from './Light/Light'
-import { useSwitchContext } from '@/components/context/switchProvider'
 // style
 import './FirstView.scss'
 
