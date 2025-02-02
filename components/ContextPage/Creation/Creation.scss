@@ -43,9 +43,12 @@
       left: 18px;
       transition: 0.3s;
       background-color: #0a0a0a;
-      @media (any-hover: hover) {
-        &:hover {
-          opacity: 0.1;
+
+      &.isSwitchOn {
+        @media (any-hover: hover) {
+          &:hover {
+            opacity: 0.1;
+          }
         }
       }
 

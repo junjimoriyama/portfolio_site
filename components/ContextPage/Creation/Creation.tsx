@@ -34,7 +34,7 @@ export const Creation = () => {
        {/* stuttering_job */}
       <div className="creation_item photo_site">
         <PcSvg />
-        <div className="creation_item_image">
+        <div className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}>
           <Link
             href="https://stuttering-job-web.vercel.app/"
             target="_blank"
@@ -69,7 +69,7 @@ export const Creation = () => {
       {/* PHOTO SITE */}
       <div className="creation_item photo_site">
         <PcSvg />
-        <div className="creation_item_image">
+        <div className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}>
           <Link
             href="https://junji-moriyama.com/"
             target="_blank"
@@ -102,7 +102,7 @@ export const Creation = () => {
 
       <div className="creation_item todo_app">
         <PcSvg />
-        <div className="creation_item_image">
+        <div className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}>
         <Link
             href="https://junji-moriyama.com/"
             target="_blank"
