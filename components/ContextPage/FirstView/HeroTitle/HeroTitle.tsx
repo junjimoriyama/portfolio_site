@@ -35,7 +35,8 @@ export const HeroTitle = () => {
             <path
               className="path path1"
               d="M5 14V13.5H4.5H0.5V0.5H32C33.7916 0.5 36.2597 1.7786 38.2518 4.40235C40.2278 7.0049 41.6962 10.8897 41.5004 15.9808C41.3081 20.9789 38.6368 24.2601 35.3325 26.3526C32.0113 28.4557 28.0728 29.3382 25.4688 29.501L25 29.5303V30V36H0.5V23.5H4.5H5V23V14Z"
-              fill="none"
+              // fill="none"
+              fill="#538392"
               stroke="#fff"
               // ref={titleSvg[0]}
             ></path>
@@ -45,7 +46,7 @@ export const HeroTitle = () => {
             <path
               className="path path2"
               d="M24.5 20C24.1 20 24 19.6667 24 19.5V11C24 10.8333 24.1 10.5 24.5 10.5C24.9 10.5 25 10.9076 25 11V19.5C25 19.6667 24.9 20 24.5 20Z"
-              fill="none"
+               fill="#538392"
               stroke="#fff"
               strokeWidth="2"
               // ref={titleSvg[1]}
@@ -71,7 +72,7 @@ export const HeroTitle = () => {
               cy="18.5"
               rx="21"
               ry="18.5"
-              fill="#80B9AD"
+              fill="transparent"
               stroke="#fff"
             ></ellipse>
             {/* 内側の円 */}

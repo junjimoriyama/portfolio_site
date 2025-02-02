@@ -12,7 +12,7 @@
     align-items: center;
     font-size: 30px;
     margin-bottom: 5px;
-    font-family: Lato;
+    font-family: Noto Sans;
     letter-spacing: 0.2em;
 
     @include bp.media(xs, max) {
@@ -72,18 +72,22 @@
       @keyframes drawSvg {
         0% {
           stroke-dashoffset: var(--dashoffset);
-          fill: none;
+          fill-opacity: 0;
+          // fill: none;
         }
         85% {
           stroke-dashoffset: 0;
-          fill: none;
+          fill-opacity: 0;
+          // fill: none;
         }
         90% {
-          fill: none;
+          fill-opacity: 0;
+          // fill: none;
         }
         100% {
           stroke-dashoffset: var(--dashoffset);
-          fill: var(--fill);
+          fill-opacity: 1;
+          // fill: #fff;
         }
       }
     }

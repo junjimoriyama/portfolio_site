@@ -104,12 +104,20 @@
         display: block;
         opacity: 0;
       }
+      @include bp.media(sm, max) {
+       display: none;;
+      }
+
     }
 
     // creation_item_imageがホバーされた兄弟要素に変更
     .creation_item_image:hover + .creation_item_visit {
       &.isVisible {
         opacity: 1;
+
+        @include bp.media(sm, max) {
+          display: none;;
+         }
       }
     }
 
