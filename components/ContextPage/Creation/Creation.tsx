@@ -5,7 +5,9 @@ import Image from "next/image";
 import Link from "next/link";
 // react
 import { useSwitchContext } from "@/components/context/switchProvider";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+// functions
+import useIntersectionObserver from "@/functions/functions";
 // svg
 import { PcSvg } from "@/assets/svg/PcSvg";
 // style
@@ -17,7 +19,6 @@ export const Creation = () => {
   // 初めはImageタグの追加クラスは空にする
   const [imageState, setImageState] = useState("");
 
-
   useEffect(() => {
     // もしスイッチがONであれば
     if (isSwitchOn) {
@@ -28,142 +29,80 @@ export const Creation = () => {
     }
   }, [isSwitchOn, imageState]);
 
+
+  const items = [
+    {
+      ref: useRef<HTMLDivElement | null>(null),
+      state: useState(false),
+      link: "https://stuttering-job-web.vercel.app/",
+      image: "/images/stuttering.png",
+      title: "吃音と仕事DATABASE",
+      description: "働く吃音ある方の体験談集",
+      tags: ["SITE", "APPLICATION", "レスポンシブ"]
+    },
+    {
+      ref: useRef<HTMLDivElement | null>(null),
+      state: useState(false),
+      link: "https://junji-moriyama.com/",
+      image: "/images/photosite.png",
+      title: "PHOTO SITE",
+      description: "個人で撮影した写真ギャラリーサイト",
+      tags: ["SITE", "レスポンシブ"]
+    },
+    {
+      ref: useRef<HTMLDivElement | null>(null),
+      state: useState(false),
+      link: "https://task-management-lake-nine.vercel.app/",
+      image:  "/images/todo.png",
+      title: "TODO APP",
+      description: "TODOリスト管理アプリ",
+      tags: ["APPLICATION"]
+    },
+    {
+      ref: useRef<HTMLDivElement | null>(null),
+      state: useState(false),
+      link: "https://shopping-app-next-ten.vercel.app/",
+      image:  "/images/superMarket.png",
+      title: "SUPER MARKET",
+      description: "仮想ショッピングサイト",
+      tags: ["APPLICATION"]
+    },
+  ];
+
+  
+  items.forEach(({ ref, state }) => {
+    const [ _, setIsVisible ] = state;
+    useIntersectionObserver(ref, setIsVisible, { threshold: 0.2 });
+  });
+
+
   return (
     <div className="creation">
-
-       {/* stuttering_job */}
-      <div className="creation_item">
-        <PcSvg />
-        <div className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}>
-          <Link
-            href="https://stuttering-job-web.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={`thumbnail_img ${imageState}`}
-              src="/images/stuttering.png"
-              alt="photo_site画像"
-              width={310}
-              height={173}
-              quality={100}
-            />
-          </Link>
-        </div>
-        <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>VISIT</p>
-        <div className="creation_item_about">
-          <div className="creation_item_title">
-          吃音と仕事DATABASE
+    {items.map(({ ref, state, link, image, title, description, tags }, index) => {
+      const [isVisible] = state;
+      return (
+        <div 
+          key={index}
+          className={`creation_item ${isVisible ? "isVisible" : ""}`}
+          ref={ref}
+        >
+          <PcSvg />
+          <div className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}>
+            <Link href={link} target="_blank" rel="noopener noreferrer">
+              <Image className={`thumbnail_img ${imageState}`} src={image} alt={`${title}画像`} width={310} height={173} />
+            </Link>
           </div>
-          <div className="creation_item_type">
-            <span>SITE</span>
-            <span>APPLICATION</span>
-            <span>レスポンシブ</span>
-          </div>
-          <div className="creation_item_description">
-           働く吃音ある方の体験談集
+          <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>VISIT</p>
+          <div className="creation_item_about">
+            <div className="creation_item_title">{title}</div>
+            <div className="creation_item_type">
+              {tags.map((tag, idx) => <span key={idx}>{tag}</span>)}
+            </div>
+            <div className="creation_item_description">{description}</div>
           </div>
         </div>
-      </div>
-
-      {/* PHOTO SITE */}
-      <div className="creation_item">
-        <PcSvg />
-        <div className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}>
-          <Link
-            href="https://junji-moriyama.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={`thumbnail_img ${imageState}`}
-              src="/images/photosite.png"
-              alt="photo_site画像"
-              width={310}
-              height={173}
-              quality={100}
-            />
-          </Link>
-        </div>
-        <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>VISIT</p>
-        <div className="creation_item_about">
-          <div className="creation_item_title">
-          PHOTO SITE
-          </div>
-          <div className="creation_item_type">
-            <span>SITE</span>
-            <span>レスポンシブ</span>
-          </div>
-          <div className="creation_item_description">
-            個人で撮影した写真ギャラリーサイト
-          </div>
-        </div>
-      </div>
-
-      {/* Todo　App */}
-      <div className="creation_item">
-        <PcSvg />
-        <div className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}>
-        <Link
-            href="https://task-management-lake-nine.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={`thumbnail_img ${imageState}`}
-              src="/images/todo.png"
-              alt="todoの画像"
-              width={310}
-              height={173}
-            />
-          </Link>
-        </div>
-        <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>VISIT</p>
-        <div className="creation_item_about">
-        <div className="creation_item_title">
-        TODO APP
-          </div>
-          <div className="creation_item_type">
-            <span>APPLICATION</span>
-          </div>
-          <div className="creation_item_description">
-          TODOリスト管理アプリ
-          </div>
-        </div>
-      </div>
-
-      {/* SUPER MARKET */}
-      <div className="creation_item">
-        <PcSvg />
-        <div className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}>
-        <Link
-            href="https://shopping-app-next-ten.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={`thumbnail_img ${imageState}`}
-              src="/images/superMarket.png"
-              alt="SUPER MARKETの画像"
-              width={310}
-              height={173}
-            />
-          </Link>
-        </div>
-        <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>VISIT</p>
-        <div className="creation_item_about">
-        <div className="creation_item_title">
-        SUPER MARKET
-          </div>
-          <div className="creation_item_type">
-            <span>APPLICATION</span>
-          </div>
-          <div className="creation_item_description">
-          仮想ショッピングサイト
-          </div>
-        </div>
-      </div>
-
-    </div>
+      );
+    })}
+  </div>
   );
 };
