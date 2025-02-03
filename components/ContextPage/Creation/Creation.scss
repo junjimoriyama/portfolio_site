@@ -31,17 +31,17 @@
 
     @keyframes pcAppearance {
       0% {
-        transform: translateY(300px);
+        // transform: translateY(300px);
         visibility: hidden;
         opacity: 0;
       }
       100% {
-        transform: translateY(0);
+        // transform: translateY(0);
         visibility: visible;
         opacity: 1;
       }
     }
-
+    
     @include bp.media(sm, max) {
       transform: scale(0.8);
     }
