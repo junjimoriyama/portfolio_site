@@ -71,7 +71,7 @@ export const Creation = () => {
 
   
   items.forEach(({ ref, state }) => {
-    const [ _unused, setIsVisible ] = state;
+    const [ isVisible, setIsVisible ] = state;
     useIntersectionObserver(ref, setIsVisible, { threshold: 0.2 });
   });
 
