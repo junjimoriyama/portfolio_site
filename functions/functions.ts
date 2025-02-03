@@ -32,7 +32,7 @@ const useIntersectionObserver = (
       // observer.unobserve(ref.current);
       observer.disconnect()
     };
-  }, [ref.current, setState, options.threshold]);
+  }, [ref, setState, options.threshold]);
 };
 
 // const useIntersectionObserver = (

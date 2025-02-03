@@ -54,7 +54,7 @@ export const Background: React.FC = () => {
     const particleTexture = textureLoader.load("/images/star.png");
 
     // パーティクルの作成
-    const particleCount = 5000;
+    const particleCount = 1000;
     const particles = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
 
@@ -69,7 +69,7 @@ export const Background: React.FC = () => {
     const particleMaterial = new THREE.PointsMaterial({
       map: particleTexture,
       color: 0xffffff,
-      size: 0.02,
+      size: 0.03,
       transparent: true,
       alphaTest: 0.5,
       depthWrite: false,
