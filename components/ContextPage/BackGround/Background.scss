@@ -42,42 +42,48 @@
   left: -100px;
   animation: moveUFO 20s 1s linear infinite;
 
+  .ufo_svg {
+    width: 50px;
+    height: 50px;
+  }
+
   @keyframes moveUFO {
     0% {
-      top: 300px;
-      left: -100px;
+      top: 500px;
+      left: 100px;
     }
     10% {
-      top: 350px;
+      top: 550px;
     }
     20% {
-      top: 300px;
-    }
-    30% {
-      top: 400px;
-    }
-    40% {
-      top: 250px;
-    }
-    50% {
-      top: 300px;
-    }
-    60% {
       top: 500px;
     }
+    30% {
+      top: 600px;
+    }
+    40% {
+      top: 450px;
+    }
+    50% {
+      top: 500px;
+    }
+    60% {
+      top: 700px;
+    }
     70% {
-      top: 300px;
+      top: 500px;
     }
     80% {
-      top: 400px;
+      top: 600px;
     }
     90% {
-      top: 250px;
+      top: 450px;
     }
     100% {
-      top: 300px;
-      left: calc(100% + 100px);
+      top: 500px;
+      left: calc(100% + 300px);
     }
+    
   }
 
   .rocket_fire {
