@@ -30,22 +30,37 @@ export const Creation = () => {
   }, [isSwitchOn, imageState]);
 
   const refs = {
-    photoSite: useRef<HTMLDivElement | null>(null),
-    stutteringJob: useRef<HTMLDivElement | null>(null),
-    todo: useRef<HTMLDivElement | null>(null),
+    photoSiteRef: useRef<HTMLDivElement | null>(null),
+    stutteringJobRef: useRef<HTMLDivElement | null>(null),
+    todoRef: useRef<HTMLDivElement | null>(null),
+    superMarketRef: useRef<HTMLDivElement | null>(null),
+    kPhotoRef: useRef<HTMLDivElement | null>(null),
+    drumRef: useRef<HTMLDivElement | null>(null),
   };
 
   const [isPhotoSiteVisible, setIsPhotoSiteVisible] = useState(false);
   const [isStutteringVisible, setIsStutteringJobVisible] = useState(false);
-  const [isTodoVisible, setIsIsTodoVisible] = useState(false);
+  const [isTodoVisible, setIsTodoVisible] = useState(false);
+  const [isSuperMarketVisible, setIsSuperMarketVisible] = useState(false);
+  const [isKPhotoVisible, setIsKPhotoVisibleVisible] = useState(false);
+  const [isDrumVisible, setIsDrumVisible] = useState(false);
 
-  useIntersectionObserver(refs.photoSite, setIsPhotoSiteVisible, {
+  useIntersectionObserver(refs.stutteringJobRef, setIsStutteringJobVisible, {
     threshold: 0.5,
   });
-  useIntersectionObserver(refs.stutteringJob, setIsStutteringJobVisible, {
+  useIntersectionObserver(refs.photoSiteRef, setIsPhotoSiteVisible, {
     threshold: 0.5,
   });
-  useIntersectionObserver(refs.todo, setIsIsTodoVisible, {
+  useIntersectionObserver(refs.todoRef, setIsTodoVisible, {
+    threshold: 0.5,
+  });
+  useIntersectionObserver(refs.superMarketRef, setIsSuperMarketVisible, {
+    threshold: 0.5,
+  });
+  useIntersectionObserver(refs.kPhotoRef, setIsKPhotoVisibleVisible, {
+    threshold: 0.5,
+  });
+  useIntersectionObserver(refs.drumRef, setIsDrumVisible, {
     threshold: 0.5,
   });
 
@@ -54,7 +69,7 @@ export const Creation = () => {
       {/* stuttering_job */}
       <div
         className={`creation_item ${isStutteringVisible ? "isVisible" : ""}`}
-        ref={refs.stutteringJob}
+        ref={refs.stutteringJobRef}
         // "creation_item"
       >
         <PcSvg />
@@ -95,7 +110,7 @@ export const Creation = () => {
       {/* PHOTO SITE */}
       <div
         className={`creation_item ${isPhotoSiteVisible ? "isVisible" : ""}`}
-        ref={refs.photoSite}
+        ref={refs.photoSiteRef}
       >
         <PcSvg />
         <div
@@ -133,7 +148,7 @@ export const Creation = () => {
 
       {/* Todo　App */}
       <div className={`creation_item ${isTodoVisible ? "isVisible" : ""}`}
-        ref={refs.todo}>
+        ref={refs.todoRef}>
         <PcSvg />
         <div
           className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
@@ -165,7 +180,8 @@ export const Creation = () => {
       </div>
 
       {/* SUPER MARKET */}
-      {/* <div className="creation_item">
+      <div className={`creation_item ${isSuperMarketVisible ? "isVisible" : ""}`}
+        ref={refs.superMarketRef}>
         <PcSvg />
         <div
           className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
@@ -193,10 +209,83 @@ export const Creation = () => {
             <span>APPLICATION</span>
           </div>
           <div className="creation_item_description">
-            仮想ショッピングサイト
+            仮想ショッピングページ
           </div>
         </div>
-      </div> */}
+      </div>
+
+
+      {/* K photo */}
+      <div className={`creation_item ${isKPhotoVisible ? "isVisible" : ""}`}
+        ref={refs.kPhotoRef}>
+        <PcSvg />
+        <div
+          className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
+        >
+          <Link
+            href="https://hiroshiphotography.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              className={`thumbnail_img ${imageState}`}
+              src="/images/k_photo.png"
+              alt="写真サイトの画像"
+              width={310}
+              height={173}
+            />
+          </Link>
+        </div>
+        <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>
+          VISIT
+        </p>
+        <div className="creation_item_about">
+          <div className="creation_item_title">KIKUCH HIROSHI</div>
+          <div className="creation_item_type">
+            <span>SITE</span>
+            <span>レスポンシブ</span>
+          </div>
+          <div className="creation_item_description">
+            フォトグラファー紹介サイト
+          </div>
+        </div>
+      </div>
+
+
+      <div className={`creation_item ${isDrumVisible ? "isVisible" : ""}`}
+        ref={refs.drumRef}>
+        <PcSvg />
+        <div
+          className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
+        >
+          <Link
+            href="https://yamagraphy.info/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              className={`thumbnail_img ${imageState}`}
+              src="/images/drumSchool.png"
+              alt="写真サイトの画像"
+              width={310}
+              height={173}
+            />
+          </Link>
+        </div>
+        <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>
+          VISIT
+        </p>
+        <div className="creation_item_about">
+          <div className="creation_item_title">LITE YAMAMOTO</div>
+          <div className="creation_item_type">
+            <span>SITE</span>
+            <span>レスポンシブ</span>
+          </div>
+          <div className="creation_item_description">
+          ドラムスクールサイト
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
@@ -310,3 +399,4 @@ export const Creation = () => {
 //   </div>
 //   );
 // };
+
