@@ -6,6 +6,7 @@ import * as THREE from "three";
 import "./Background.scss";
 import { useSwitchContext } from "@/components/context/switchProvider";
 import { RocketSvg } from "@/assets/svg/RocketSvg";
+import { UFOSvg } from "@/assets/svg/UFO";
 
 export const Background: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -134,6 +135,11 @@ export const Background: React.FC = () => {
           !isSwitchOn && <RocketSvg/>
         }
       </div>
+    <div className="ufo">
+        {
+          !isSwitchOn && <UFOSvg/>
+        }
+    </div>
     </>
   );
 };
