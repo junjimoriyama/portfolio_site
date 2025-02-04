@@ -29,6 +29,7 @@
       flex-direction: column;
       align-items: center;
       gap: 30px;
+      text-shadow: -1px -1px #0a0a0a, 1px -1px #0a0a0a, -1px 1px #0a0a0a, 1px 1px #0a0a0a;
       visibility: hidden;
       opacity: 0;
 
@@ -54,10 +55,11 @@
     }
 
     .profile_description {
+      flex: 6;
       font-size: 20px;
+      text-shadow: -1px -1px #0a0a0a, 1px -1px #0a0a0a, -1px 1px #0a0a0a, 1px 1px #0a0a0a;
       letter-spacing: .2em;
       line-height: 2.5;
-      flex: 6;
       visibility: hidden;
       opacity: 0;
 
@@ -77,6 +79,39 @@
           transform: translateY(0);
           visibility: visible;
           opacity: 1;
+        }
+      }
+    }
+  }
+
+  &.isSwitchOn {
+    // background-color: #fff;
+    border-radius: 10px;
+    .profile_wrap {
+      .profile_myName {
+        // color: #538392;
+      }
+  
+      .profile_description {
+        // color: #b3e2a7;
+  
+        &.isVisible {
+          animation: descriptionAppearance 1s 0.5s forwards;
+        }
+  
+        @include bp.media(sm, max) {
+         padding: 20px;
+        }
+        @keyframes descriptionAppearance {
+          0% {
+            transform: translateY(100px);
+            visibility: hidden;
+            opacity: 0;
+          } 100% {
+            transform: translateY(0);
+            visibility: visible;
+            opacity: 1;
+          }
         }
       }
     }
