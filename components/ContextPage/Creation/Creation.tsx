@@ -193,7 +193,7 @@ export const Creation = () => {
           >
             <Image
               className={`thumbnail_img ${imageState}`}
-              src="/images/superMarket.png"
+              src="/images/market.png"
               alt="SUPER MARKETの画像"
               width={310}
               height={173}
@@ -252,6 +252,7 @@ export const Creation = () => {
       </div>
 
 
+      {/* drum school */}
       <div className={`creation_item ${isDrumVisible ? "isVisible" : ""}`}
         ref={refs.drumRef}>
         <PcSvg />
