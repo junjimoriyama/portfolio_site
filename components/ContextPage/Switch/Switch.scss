@@ -3,7 +3,7 @@
 .switch {
   position: fixed;
   right: 30px;
-  bottom: 30px;
+  bottom: 50px;
   width: 60px;
   height: 80px;
   background: linear-gradient(#eee, #ccc, #eee);
@@ -39,6 +39,32 @@
     transform: scale(0.8);
   }
 
+  .on_text,
+  .off_text {
+    position: absolute;
+  }
+
+  .on_text {
+    top: -25px;
+    visibility: hidden;
+    opacity: 0;
+
+    &.switchOn {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  .off_text {
+    bottom: -30px;
+    visibility: hidden;
+    opacity: 0;
+    
+    &.switchOff {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
   .switchBtn {
     position: relative;
     width: 30px;
@@ -49,7 +75,7 @@
     cursor: pointer;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: 0;
       left: 0;
@@ -60,7 +86,7 @@
     }
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       top: 45%;
       left: 50%;
@@ -74,15 +100,20 @@
 
   &.switchOn {
     .switchBtn {
+      transform-origin: .3s;
       &::before {
         top: 15%;
       }
 
       &::after {
-        content: '';
+        content: "";
         top: 55%;
         height: 1.5px;
       }
+    }
+
+    &:hover {
+      // opacity: 0.7;
     }
   }
 }

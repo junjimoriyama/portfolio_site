@@ -21,6 +21,8 @@ export const Switch = () => {
       setIsSwitchOn(!isSwitchOn);
     }}
   >
+    <p className={`on_text  ${isSwitchOn ? "switchOn" : ""}`}>ON</p>
+    <p className={`off_text  ${!isSwitchOn ? "switchOff" : ""}`}>OFF</p>
     <div className="switchBtn"></div>
   </div>
   )

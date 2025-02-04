@@ -54,7 +54,7 @@ export const Profile = () => {
       className={`profile_description ${isDescriptionVisible ? "isVisible" : ""}`}
       ref={refs.description}
       >
-        <p>WEB制作、開発に惹かれて3年。</p>
+        <p>フロントエンドに惹かれて3年。</p>
         <p>シンプルでストレスのない設計を好み、アニメーションを加えた少し遊び心を加えたUI/UXが好きです。</p>
         </div>
 
