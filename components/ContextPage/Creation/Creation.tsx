@@ -30,22 +30,22 @@ export const Creation = () => {
   }, [isSwitchOn, imageState]);
 
   const refs = {
-    photoSiteRef: useRef<HTMLDivElement | null>(null),
-    stutteringJobRef: useRef<HTMLDivElement | null>(null),
-    todoRef: useRef<HTMLDivElement | null>(null),
+    photoSite: useRef<HTMLDivElement | null>(null),
+    stutteringJob: useRef<HTMLDivElement | null>(null),
+    todo: useRef<HTMLDivElement | null>(null),
   };
 
   const [isPhotoSiteVisible, setIsPhotoSiteVisible] = useState(false);
   const [isStutteringVisible, setIsStutteringJobVisible] = useState(false);
   const [isTodoVisible, setIsIsTodoVisible] = useState(false);
 
-  useIntersectionObserver(refs.photoSiteRef, setIsPhotoSiteVisible, {
+  useIntersectionObserver(refs.photoSite, setIsPhotoSiteVisible, {
     threshold: 0.5,
   });
-  useIntersectionObserver(refs.stutteringJobRef, setIsStutteringJobVisible, {
+  useIntersectionObserver(refs.stutteringJob, setIsStutteringJobVisible, {
     threshold: 0.5,
   });
-  useIntersectionObserver(refs.todoRef, setIsIsTodoVisible, {
+  useIntersectionObserver(refs.todo, setIsIsTodoVisible, {
     threshold: 0.5,
   });
 
@@ -54,7 +54,7 @@ export const Creation = () => {
       {/* stuttering_job */}
       <div
         className={`creation_item ${isStutteringVisible ? "isVisible" : ""}`}
-        ref={refs.stutteringJobRef}
+        ref={refs.stutteringJob}
         // "creation_item"
       >
         <PcSvg />
@@ -95,7 +95,7 @@ export const Creation = () => {
       {/* PHOTO SITE */}
       <div
         className={`creation_item ${isPhotoSiteVisible ? "isVisible" : ""}`}
-        ref={refs.photoSiteRef}
+        ref={refs.photoSite}
       >
         <PcSvg />
         <div
@@ -133,7 +133,7 @@ export const Creation = () => {
 
       {/* Todo　App */}
       <div className={`creation_item ${isTodoVisible ? "isVisible" : ""}`}
-        ref={refs.todoRef}>
+        ref={refs.todo}>
         <PcSvg />
         <div
           className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}

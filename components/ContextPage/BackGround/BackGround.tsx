@@ -15,7 +15,7 @@ export const Background: React.FC = () => {
   const [isStart, setIsStart] = useState(false);
   const { isSwitchOn } = useSwitchContext();
 
-  // 5秒後にThree.jsを開始
+  // 4秒後にThree.jsを開始
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsStart(true);
@@ -23,9 +23,6 @@ export const Background: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    console.log(`isSwitchOn: ${isSwitchOn}`);
-  }, [isSwitchOn]);
 
   useEffect(() => {
     if (!mountRef.current || !isStart) return;
