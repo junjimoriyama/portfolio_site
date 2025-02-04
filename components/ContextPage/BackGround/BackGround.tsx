@@ -20,7 +20,7 @@ export const Background: React.FC = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsStart(true);
-    }, 4000);
+    }, 3500);
     return () => clearTimeout(timer);
   }, []);
 
