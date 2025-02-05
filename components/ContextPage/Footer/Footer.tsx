@@ -5,6 +5,7 @@ import { EarthSvg } from "@/assets/svg/EarthSvg";
 // style
 import "./Footer.scss";
 import { useSwitchContext } from "@/components/context/switchProvider";
+import { HeroTitle } from "../FirstView/HeroTitle/HeroTitle";
 
 export const Footer = () => {
 
@@ -13,6 +14,9 @@ export const Footer = () => {
   return (
     <div className={`footer ${isSwitchOn ? "isOn" : ""}`}>
       <EarthSvg />
+      {isSwitchOn && 
+      <HeroTitle />
+      }
     </div>
   );
 };

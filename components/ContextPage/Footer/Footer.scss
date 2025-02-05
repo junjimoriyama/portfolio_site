@@ -1,24 +1,65 @@
+@use "@/style/breakpoint.scss" as bp;
+
 .footer {
+  position: relative;
   width: 100vw;
   display: flex;
   justify-content: center;
 
-  .earth_path {
-    transition: .3s;
+  .earth_svg {
+    width: 100%;
+    height: auto;
+    max-width: 1280px;
+
+    .earth_path {
+      transition: .3s;
+    }
   }
 
   &.isOn {
     .earth_path {
-      fill: #fff;
+      fill: #d9e2e0;
     }
+  }
+
+  .hero_title {
+    z-index: 10;
+    bottom: 10px;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+
+    @include bp.media(sm, max) {
+      top: 40%;
+      transform: translate(-50%, -50%) scale(0.3);
+    }
+
+    .hero_name {
+      .hero_name_word {
+        opacity: 1;
+        color: #538392;
+        text-shadow: none;
+        animation: none;
+      }
+    }
+
+    .svg_title {
+      gap: 10px;
+
+      svg {
+        .path, .ellipse {
+          opacity: 1;
+          fill: #0a0a0a;
+          animation: none;
+        }
+        .path2, .path3, .path7, .path10 {
+          fill: #d9e2e0;
+        }
+      }
+    }
+
   }
 }
 
-.earth_svg {
-  width: 100%;
-  height: auto;
-  max-width: 1280px; /* 必要に応じて制限を追加 */
-}
 
 // .footer {
 //   // position: fixed;

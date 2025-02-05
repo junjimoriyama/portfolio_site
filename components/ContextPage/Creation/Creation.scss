@@ -8,12 +8,13 @@
   place-items: center;
   column-gap: 30px;
   row-gap: 100px;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
 
   @include bp.media(xs, max) {
     grid-template-columns: repeat(1, 1fr);
     column-gap: 0;
     row-gap: 0;
+    margin-bottom: 50px;
   }
 
   .creation_item {

@@ -3,7 +3,7 @@
 .switch {
   position: fixed;
   right: 30px;
-  bottom: 50px;
+  bottom: 70px;
   width: 60px;
   height: 80px;
   background: linear-gradient(#eee, #ccc, #eee);
@@ -14,6 +14,7 @@
   align-items: center;
   opacity: 0;
   visibility: hidden;
+  z-index: 100;
   // animation: 4s 3s forwards visibleSwitch;
 
   opacity: 1;
@@ -21,7 +22,6 @@
 
   @include bp.media(xs, max) {
     right: 20px;
-    bottom: 50px;
   }
 
   @keyframes visibleSwitch {
@@ -58,7 +58,7 @@
     bottom: -30px;
     visibility: hidden;
     opacity: 0;
-    
+
     &.switchOff {
       visibility: visible;
       opacity: 1;
@@ -69,7 +69,7 @@
     position: relative;
     width: 30px;
     height: 45px;
-    background: linear-gradient(#538392, #fff, #777);
+    background: linear-gradient(#777, #fff, #538392);
     border-radius: 6px;
     border: 3px solid #000;
     cursor: pointer;
@@ -77,7 +77,7 @@
     &::before {
       content: "";
       position: absolute;
-      top: 0;
+      top: 15%;
       left: 0;
       width: 100%;
       height: 85%;
@@ -88,7 +88,7 @@
     &::after {
       content: "";
       position: absolute;
-      top: 45%;
+      top: 55%;
       left: 50%;
       transform: translateX(-50%);
       width: 80%;
@@ -100,15 +100,15 @@
 
   &.switchOn {
     .switchBtn {
-      transform-origin: .3s;
+      transform-origin: 0.3s;
       &::before {
-        top: 15%;
+        top: 0%;
       }
 
       &::after {
         content: "";
-        top: 55%;
-        height: 1.5px;
+        top: 45%;
+        left: 50%;
       }
     }
 
