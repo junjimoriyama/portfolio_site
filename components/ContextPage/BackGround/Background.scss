@@ -1,3 +1,5 @@
+@use "@/style/breakpoint.scss" as bp;
+
 .threejs_container {
   position: fixed;
   top: 0;
@@ -11,7 +13,7 @@
   position: absolute;
   bottom: 0;
   right: 40%;
-  animation: moveRocket 60s 10s linear infinite;
+  animation: moveRocket 60s linear infinite;
 
   @keyframes moveRocket {
     0% {
@@ -40,62 +42,79 @@
   position: absolute;
   top: 300px;
   left: -100px;
-  animation: moveUFO 20s 1s linear infinite;
+  animation: moveUFO 60s linear infinite;
+  animation-delay: 20s; // 最初の遅延を設定
 
   .ufo_svg {
-    width: 50px;
-    height: 50px;
+    @include bp.media(xs, max) {
+      width: 50px;
+      height: 50px;
+    }
   }
 
   @keyframes moveUFO {
     0% {
-      top: 500px;
-      left: 100px;
+      top: 700px;
+      left: -100px;
+      opacity: 1;
+    }
+    5% {
+      top: 800px;
     }
     10% {
-      top: 550px;
+      top: 650px;
+    }
+    15% {
+      top: 800px;
     }
     20% {
-      top: 500px;
+      top: 700px;
+    }
+    25% {
+      top: 850px;
     }
     30% {
       top: 600px;
     }
+    35% {
+      top: 800px;
+    }
     40% {
-      top: 450px;
+      top: 650px;
+    }
+    45% {
+      top: 800px;
     }
     50% {
-      top: 500px;
+      top: 700px;
+      left: calc(100% + 300px);
     }
     60% {
       top: 700px;
-    }
-    70% {
-      top: 500px;
-    }
-    80% {
-      top: 600px;
+      opacity: 1;
     }
     90% {
       top: 450px;
+      left: calc(100% + 300px);
+      opacity: 0; // 画面外に出たら透明に
     }
     100% {
       top: 500px;
-      left: calc(100% + 300px);
-    }
-    
-  }
-
-  .rocket_fire {
-    animation: fireBlinking 0.5s linear infinite;
-
-    @keyframes fireBlinking {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
+      left: -100px;
+      opacity: 0; // 最初は透明
     }
   }
+
+  // .rocket_fire {
+  //   animation: fireBlinking 0.5s linear infinite;
+
+  //   @keyframes fireBlinking {
+  //     0% {
+  //       opacity: 0;
+  //     }
+  //     100% {
+  //       opacity: 1;
+  //     }
+  //   }
+  // }
 }

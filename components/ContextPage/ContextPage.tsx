@@ -7,6 +7,7 @@ import { Creation } from './Creation/Creation';
 import { Switch } from './Switch/Switch';
 import { Background } from './BackGround/BackGround';
 import { Profile } from './Profile/Profile';
+import { Footer } from './Footer/Footer';
 
 export const ContextPage = () => {
   return (
@@ -16,6 +17,7 @@ export const ContextPage = () => {
       <Profile />
       <Creation />
       <Switch />
+      <Footer />
     </SwitchProvider>
   )
 }

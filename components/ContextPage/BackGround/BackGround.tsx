@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
@@ -25,7 +25,6 @@ export const Background: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-
   useEffect(() => {
     if (!mountRef.current || !isStart) return;
 
@@ -40,7 +39,12 @@ export const Background: React.FC = () => {
     sceneRef.current = scene;
     scene.background = new THREE.Color(0x0a0a0a);
 
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
     camera.position.z = 5;
 
     const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -130,16 +134,8 @@ export const Background: React.FC = () => {
   return (
     <>
       {isStart && <div ref={mountRef} className="threejs_container"></div>}
-      <div className="rocket">
-        {
-          !isSwitchOn && <RocketSvg/>
-        }
-      </div>
-    <div className="ufo">
-        {
-          !isSwitchOn && <UFOSvg/>
-        }
-    </div>
+      <div className="rocket">{!isSwitchOn && <RocketSvg />}</div>
+      <div className="ufo">{!isSwitchOn && <UFOSvg />}</div>
     </>
   );
 };

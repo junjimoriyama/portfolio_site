@@ -8,6 +8,7 @@
   place-items: center;
   column-gap: 30px;
   row-gap: 100px;
+  margin-bottom: 200px;
 
   @include bp.media(xs, max) {
     grid-template-columns: repeat(1, 1fr);
