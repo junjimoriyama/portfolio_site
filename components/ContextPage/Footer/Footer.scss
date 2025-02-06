@@ -36,9 +36,13 @@
     .hero_name {
       .hero_name_word {
         opacity: 1;
-        color: #538392;
+        color: #0a0a0a;
         text-shadow: none;
         animation: none;
+        @include bp.media(xs, max) {
+          font-size: 22px;
+         
+        }
       }
     }
 

@@ -12,12 +12,12 @@ import { Footer } from './Footer/Footer';
 export const ContextPage = () => {
   return (
     <SwitchProvider>
+      <Background />
       <FirstView />
       <Profile />
       <Creation />
       <Switch />
       <Footer />
-      <Background />
     </SwitchProvider>
   )
 }
