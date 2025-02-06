@@ -125,6 +125,13 @@
   left: 10px;
   animation: astronautMove 5s linear infinite;
 
+  .astronaut_Svg {
+    @include bp.media(sm, max) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+
   @keyframes astronautMove {
         0% {
           transform: translate(0, 0);
