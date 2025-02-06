@@ -30,22 +30,30 @@ export const Creation = () => {
     }
   }, [isSwitchOn, imageState]);
 
+  // title
+  const creationTitle = "ポートフォリオ".split("");
+
+  // ref
   const refs = {
-    photoSiteRef: useRef<HTMLDivElement | null>(null),
-    stutteringJobRef: useRef<HTMLDivElement | null>(null),
-    todoRef: useRef<HTMLDivElement | null>(null),
-    superMarketRef: useRef<HTMLDivElement | null>(null),
-    kPhotoRef: useRef<HTMLDivElement | null>(null),
-    drumRef: useRef<HTMLDivElement | null>(null),
+    photoSiteRef: useRef<HTMLLIElement | null>(null),
+    stutteringJobRef: useRef<HTMLLIElement | null>(null),
+    todoRef: useRef<HTMLLIElement | null>(null),
+    superMarketRef: useRef<HTMLLIElement | null>(null),
+    kPhotoRef: useRef<HTMLLIElement | null>(null),
+    drumRef: useRef<HTMLLIElement | null>(null),
+    titleRef: useRef<HTMLDivElement | null>(null),
   };
 
+  // state
   const [isPhotoSiteVisible, setIsPhotoSiteVisible] = useState(false);
   const [isStutteringVisible, setIsStutteringJobVisible] = useState(false);
   const [isTodoVisible, setIsTodoVisible] = useState(false);
   const [isSuperMarketVisible, setIsSuperMarketVisible] = useState(false);
   const [isKPhotoVisible, setIsKPhotoVisibleVisible] = useState(false);
   const [isDrumVisible, setIsDrumVisible] = useState(false);
+  const [isTitleVisible, setIsTitleVisible] = useState(false);
 
+  // intersectionObserver
   useIntersectionObserver(refs.stutteringJobRef, setIsStutteringJobVisible, {
     threshold: 0.5,
   });
@@ -64,241 +72,265 @@ export const Creation = () => {
   useIntersectionObserver(refs.drumRef, setIsDrumVisible, {
     threshold: 0.5,
   });
+  useIntersectionObserver(refs.titleRef, setIsTitleVisible, {
+    threshold: 0.5,
+  });
 
   return (
     <div className="creation">
-      {/* stuttering_job */}
-      <div
-        className={`creation_item ${isStutteringVisible ? "isVisible" : ""}`}
-        ref={refs.stutteringJobRef}
-        // "creation_item"
+      <div 
+      className={`creation_title ${isTitleVisible ? "isVisible" : ""}`}
+      ref={refs.titleRef}
       >
-        <PcSvg />
-        {!isSwitchOn && <AlienSvg_DG />}
-        <div
-          className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
-        >
-          <Link
-            href="https://stuttering-job-web.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={`thumbnail_img ${imageState}`}
-              src="/images/stuttering.png"
-              alt="photo_site画像"
-              width={310}
-              height={173}
-              quality={100}
-            />
-          </Link>
-        </div>
-        <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>
-          VISIT
-        </p>
-        <div className="creation_item_about">
-          <div className="creation_item_title">吃音と仕事DATABASE</div>
-          <div className="creation_item_type">
-            <span>SITE</span>
-            <span>APPLICATION</span>
-            <span>レスポンシブ</span>
-          </div>
-          <div className="creation_item_description">
-            働く吃音ある方の体験談集
-          </div>
-        </div>
+        {creationTitle.map((word, index) => {
+          return (
+            <span
+              className={`creation_title_word ${(index + 1) % 2 !== 0 ? "odd" : "even"}`}
+              key={`${word}-${index}`}
+            >
+              {word}
+            </span>
+          );
+        })}
       </div>
+      <ul className="creation_list">
+        {/* stuttering_job */}
+        <li
+          className={`creation_item ${isStutteringVisible ? "isVisible" : ""}`}
+          ref={refs.stutteringJobRef}
+          // "creation_item"
+        >
+          <PcSvg />
+          {!isSwitchOn && <AlienSvg_DG />}
+          <div
+            className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
+          >
+            <Link
+              href="https://stuttering-job-web.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                className={`thumbnail_img ${imageState}`}
+                src="/images/stuttering.png"
+                alt="photo_site画像"
+                width={310}
+                height={173}
+                quality={100}
+              />
+            </Link>
+          </div>
+          <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>
+            VISIT
+          </p>
+          <div className="creation_item_about">
+            <div className="creation_item_title">吃音と仕事DATABASE</div>
+            <div className="creation_item_type">
+              <span>SITE</span>
+              <span>APPLICATION</span>
+              <span>レスポンシブ</span>
+            </div>
+            <div className="creation_item_description">
+              働く吃音ある方の体験談集
+            </div>
+          </div>
+        </li>
 
-      {/* PHOTO SITE */}
-      <div
-        className={`creation_item ${isPhotoSiteVisible ? "isVisible" : ""}`}
-        ref={refs.photoSiteRef}
-      >
-        <PcSvg />
-        {!isSwitchOn && <AlienSvg_G />}
-        <div
-          className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
+        {/* PHOTO SITE */}
+        <li
+          className={`creation_item ${isPhotoSiteVisible ? "isVisible" : ""}`}
+          ref={refs.photoSiteRef}
         >
-          <Link
-            href="https://junji-moriyama.com/"
-            target="_blank"
-            rel="noopener noreferrer"
+          <PcSvg />
+          {!isSwitchOn && <AlienSvg_G />}
+          <div
+            className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
           >
-            <Image
-              className={`thumbnail_img ${imageState}`}
-              src="/images/photosite.png"
-              alt="photo_site画像"
-              width={310}
-              height={173}
-              quality={100}
-            />
-          </Link>
-        </div>
-        <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>
-          VISIT
-        </p>
-        <div className="creation_item_about">
-          <div className="creation_item_title">PHOTO SITE</div>
-          <div className="creation_item_type">
-            <span>SITE</span>
-            <span>レスポンシブ</span>
+            <Link
+              href="https://junji-moriyama.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                className={`thumbnail_img ${imageState}`}
+                src="/images/photosite.png"
+                alt="photo_site画像"
+                width={310}
+                height={173}
+                quality={100}
+              />
+            </Link>
           </div>
-          <div className="creation_item_description">
-            個人で撮影した写真ギャラリーサイト
+          <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>
+            VISIT
+          </p>
+          <div className="creation_item_about">
+            <div className="creation_item_title">PHOTO SITE</div>
+            <div className="creation_item_type">
+              <span>SITE</span>
+              <span>レスポンシブ</span>
+            </div>
+            <div className="creation_item_description">
+              個人で撮影した写真ギャラリーサイト
+            </div>
           </div>
-        </div>
-      </div>
+        </li>
 
-      {/* Todo　App */}
-      <div
-        className={`creation_item ${isTodoVisible ? "isVisible" : ""}`}
-        ref={refs.todoRef}
-      >
-        {!isSwitchOn && <AlienSvg_LG />}
-        <PcSvg />
-        <div
-          className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
+        {/* Todo　App */}
+        <li
+          className={`creation_item ${isTodoVisible ? "isVisible" : ""}`}
+          ref={refs.todoRef}
         >
-          <Link
-            href="https://task-management-lake-nine.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
+          {!isSwitchOn && <AlienSvg_LG />}
+          <PcSvg />
+          <div
+            className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
           >
-            <Image
-              className={`thumbnail_img ${imageState}`}
-              src="/images/todo.png"
-              alt="todoの画像"
-              width={310}
-              height={173}
-            />
-          </Link>
-        </div>
-        <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>
-          VISIT
-        </p>
-        <div className="creation_item_about">
-          <div className="creation_item_title">TODO APP</div>
-          <div className="creation_item_type">
-            <span>APPLICATION</span>
+            <Link
+              href="https://task-management-lake-nine.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                className={`thumbnail_img ${imageState}`}
+                src="/images/todo.png"
+                alt="todoの画像"
+                width={310}
+                height={173}
+              />
+            </Link>
           </div>
-          <div className="creation_item_description">TODOリスト管理アプリ</div>
-        </div>
-      </div>
+          <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>
+            VISIT
+          </p>
+          <div className="creation_item_about">
+            <div className="creation_item_title">TODO APP</div>
+            <div className="creation_item_type">
+              <span>APPLICATION</span>
+            </div>
+            <div className="creation_item_description">
+              TODOリスト管理アプリ
+            </div>
+          </div>
+        </li>
 
-      {/* SUPER MARKET */}
-      <div
-        className={`creation_item ${isSuperMarketVisible ? "isVisible" : ""}`}
-        ref={refs.superMarketRef}
-      >
-        {!isSwitchOn && <AlienSvg_DG />}
-        <PcSvg />
-        <div
-          className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
+        {/* SUPER MARKET */}
+        <li
+          className={`creation_item ${isSuperMarketVisible ? "isVisible" : ""}`}
+          ref={refs.superMarketRef}
         >
-          <Link
-            href="https://shopping-app-next-ten.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
+          {!isSwitchOn && <AlienSvg_DG />}
+          <PcSvg />
+          <div
+            className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
           >
-            <Image
-              className={`thumbnail_img ${imageState}`}
-              src="/images/market.png"
-              alt="SUPER MARKETの画像"
-              width={310}
-              height={173}
-            />
-          </Link>
-        </div>
-        <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>
-          VISIT
-        </p>
-        <div className="creation_item_about">
-          <div className="creation_item_title">SUPER MARKET</div>
-          <div className="creation_item_type">
-            <span>APPLICATION</span>
+            <Link
+              href="https://shopping-app-next-ten.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                className={`thumbnail_img ${imageState}`}
+                src="/images/market.png"
+                alt="SUPER MARKETの画像"
+                width={310}
+                height={173}
+              />
+            </Link>
           </div>
-          <div className="creation_item_description">
-            仮想ショッピングページ
+          <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>
+            VISIT
+          </p>
+          <div className="creation_item_about">
+            <div className="creation_item_title">SUPER MARKET</div>
+            <div className="creation_item_type">
+              <span>APPLICATION</span>
+            </div>
+            <div className="creation_item_description">
+              仮想ショッピングページ
+            </div>
           </div>
-        </div>
-      </div>
+        </li>
 
-      {/* K photo */}
-      <div
-        className={`creation_item ${isKPhotoVisible ? "isVisible" : ""}`}
-        ref={refs.kPhotoRef}
-      >
-        {!isSwitchOn && <AlienSvg_G />}
-        <PcSvg />
-        <div
-          className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
+        {/* K photo */}
+        <li
+          className={`creation_item ${isKPhotoVisible ? "isVisible" : ""}`}
+          ref={refs.kPhotoRef}
         >
-          <Link
-            href="https://hiroshiphotography.com/"
-            target="_blank"
-            rel="noopener noreferrer"
+          {!isSwitchOn && <AlienSvg_G />}
+          <PcSvg />
+          <div
+            className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
           >
-            <Image
-              className={`thumbnail_img ${imageState}`}
-              src="/images/k_photo.png"
-              alt="写真サイトの画像"
-              width={310}
-              height={173}
-            />
-          </Link>
-        </div>
-        <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>
-          VISIT
-        </p>
-        <div className="creation_item_about">
-          <div className="creation_item_title">KIKUCH HIROSHI</div>
-          <div className="creation_item_type">
-            <span>SITE</span>
-            <span>レスポンシブ</span>
+            <Link
+              href="https://hiroshiphotography.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                className={`thumbnail_img ${imageState}`}
+                src="/images/k_photo.png"
+                alt="写真サイトの画像"
+                width={310}
+                height={173}
+              />
+            </Link>
           </div>
-          <div className="creation_item_description">
-            フォトグラファー紹介サイト
+          <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>
+            VISIT
+          </p>
+          <div className="creation_item_about">
+            <div className="creation_item_title">KIKUCH HIROSHI</div>
+            <div className="creation_item_type">
+              <span>SITE</span>
+              <span>レスポンシブ</span>
+            </div>
+            <div className="creation_item_description">
+              フォトグラファー紹介サイト
+            </div>
           </div>
-        </div>
-      </div>
+        </li>
 
-      {/* drum school */}
-      <div
-        className={`creation_item ${isDrumVisible ? "isVisible" : ""}`}
-        ref={refs.drumRef}
-      >
-        {}
-        {!isSwitchOn && <AlienSvg_LG />}
-        <PcSvg />
-        <div
-          className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
+        {/* drum school */}
+        <li
+          className={`creation_item ${isDrumVisible ? "isVisible" : ""}`}
+          ref={refs.drumRef}
         >
-          <Link
-            href="https://yamagraphy.info/"
-            target="_blank"
-            rel="noopener noreferrer"
+          {}
+          {!isSwitchOn && <AlienSvg_LG />}
+          <PcSvg />
+          <div
+            className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
           >
-            <Image
-              className={`thumbnail_img ${imageState}`}
-              src="/images/drumSchool.png"
-              alt="写真サイトの画像"
-              width={310}
-              height={173}
-            />
-          </Link>
-        </div>
-        <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>
-          VISIT
-        </p>
-        <div className="creation_item_about">
-          <div className="creation_item_title">LITE YAMAMOTO</div>
-          <div className="creation_item_type">
-            <span>SITE</span>
-            <span>レスポンシブ</span>
+            <Link
+              href="https://yamagraphy.info/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                className={`thumbnail_img ${imageState}`}
+                src="/images/drumSchool.png"
+                alt="写真サイトの画像"
+                width={310}
+                height={173}
+              />
+            </Link>
           </div>
-          <div className="creation_item_description">ドラムスクールサイト</div>
-        </div>
-      </div>
+          <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>
+            VISIT
+          </p>
+          <div className="creation_item_about">
+            <div className="creation_item_title">LITE YAMAMOTO</div>
+            <div className="creation_item_type">
+              <span>SITE</span>
+              <span>レスポンシブ</span>
+            </div>
+            <div className="creation_item_description">
+              ドラムスクールサイト
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
   );
 };
