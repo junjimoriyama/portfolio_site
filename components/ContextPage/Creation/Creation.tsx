@@ -12,6 +12,7 @@ import useIntersectionObserver from "@/functions/functions";
 import { PcSvg } from "@/assets/svg/PcSvg";
 // style
 import "./Creation.scss";
+import { AlienSvg_DG, AlienSvg_G, AlienSvg_LG } from "@/assets/svg/Alien";
 
 export const Creation = () => {
   const { isSwitchOn } = useSwitchContext();
@@ -73,6 +74,7 @@ export const Creation = () => {
         // "creation_item"
       >
         <PcSvg />
+        {!isSwitchOn && <AlienSvg_DG />}
         <div
           className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
         >
@@ -80,7 +82,7 @@ export const Creation = () => {
             href="https://stuttering-job-web.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-          > 
+          >
             <Image
               className={`thumbnail_img ${imageState}`}
               src="/images/stuttering.png"
@@ -113,6 +115,7 @@ export const Creation = () => {
         ref={refs.photoSiteRef}
       >
         <PcSvg />
+        {!isSwitchOn && <AlienSvg_G />}
         <div
           className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
         >
@@ -147,8 +150,11 @@ export const Creation = () => {
       </div>
 
       {/* Todo　App */}
-      <div className={`creation_item ${isTodoVisible ? "isVisible" : ""}`}
-        ref={refs.todoRef}>
+      <div
+        className={`creation_item ${isTodoVisible ? "isVisible" : ""}`}
+        ref={refs.todoRef}
+      >
+        {!isSwitchOn && <AlienSvg_LG />}
         <PcSvg />
         <div
           className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
@@ -180,8 +186,11 @@ export const Creation = () => {
       </div>
 
       {/* SUPER MARKET */}
-      <div className={`creation_item ${isSuperMarketVisible ? "isVisible" : ""}`}
-        ref={refs.superMarketRef}>
+      <div
+        className={`creation_item ${isSuperMarketVisible ? "isVisible" : ""}`}
+        ref={refs.superMarketRef}
+      >
+        {!isSwitchOn && <AlienSvg_DG />}
         <PcSvg />
         <div
           className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
@@ -214,10 +223,12 @@ export const Creation = () => {
         </div>
       </div>
 
-
       {/* K photo */}
-      <div className={`creation_item ${isKPhotoVisible ? "isVisible" : ""}`}
-        ref={refs.kPhotoRef}>
+      <div
+        className={`creation_item ${isKPhotoVisible ? "isVisible" : ""}`}
+        ref={refs.kPhotoRef}
+      >
+        {!isSwitchOn && <AlienSvg_G />}
         <PcSvg />
         <div
           className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
@@ -251,10 +262,13 @@ export const Creation = () => {
         </div>
       </div>
 
-
       {/* drum school */}
-      <div className={`creation_item ${isDrumVisible ? "isVisible" : ""}`}
-        ref={refs.drumRef}>
+      <div
+        className={`creation_item ${isDrumVisible ? "isVisible" : ""}`}
+        ref={refs.drumRef}
+      >
+        {}
+        {!isSwitchOn && <AlienSvg_LG />}
         <PcSvg />
         <div
           className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
@@ -282,9 +296,7 @@ export const Creation = () => {
             <span>SITE</span>
             <span>レスポンシブ</span>
           </div>
-          <div className="creation_item_description">
-          ドラムスクールサイト
-          </div>
+          <div className="creation_item_description">ドラムスクールサイト</div>
         </div>
       </div>
     </div>
@@ -400,4 +412,3 @@ export const Creation = () => {
 //   </div>
 //   );
 // };
-

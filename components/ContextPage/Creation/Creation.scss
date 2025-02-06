@@ -50,8 +50,26 @@
       transform: scale(0.7);
     }
 
-    svg {
+    .pc_svg {
       margin-bottom: 20px;
+      z-index: 1;
+    }
+
+    .alien_svg {
+      position: absolute;
+      top: -50px;
+      right: -20px;
+      animation: alienMove 3s infinite;
+
+      @keyframes alienMove {
+        0% {
+          transform: rotate(0);
+        } 50% {
+          transform: rotate(-50deg);
+        } 100% {
+          transform: rotate(0);
+        }
+      }
     }
 
     .creation_item_image {
