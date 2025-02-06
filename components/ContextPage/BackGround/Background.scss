@@ -117,4 +117,30 @@
   //     }
   //   }
   // }
+
 }
+.astronaut {
+  position: absolute;
+  bottom: 200px;
+  left: 10px;
+  animation: astronautMove 5s linear infinite;
+
+  @keyframes astronautMove {
+        0% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(10px, 10px);
+        }
+        50% {
+          transform: translate(0px, 0px);
+        }
+        75% {
+          transform: translate(-10px, -10px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+    }
+
