@@ -12,6 +12,10 @@
     font-weight: bold;
     text-shadow: -1px -1px #0a0a0a, 1px -1px #0a0a0a, -1px 1px #0a0a0a,
       1px 1px #0a0a0a;
+
+      @include bp.media(sm, max) {
+        font-size: 32px;
+      }
     .odd {
       transform: translateY(-30px);
       opacity: 0;
@@ -25,7 +29,6 @@
     }
 
     &.isVisible {
-      font-size: 60px;
       .odd {
         animation: creationTitleMoveOdd 2s forwards;
       }
