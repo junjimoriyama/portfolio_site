@@ -2,18 +2,15 @@
 
 <img src="https://github.com/user-attachments/assets/3fb3e428-db0a-469d-941b-4311e067a5fd" width="400" alt="git_portfolio">
 
-
-
-
 ### URL: junji-moriyama-portfolio.vercel.app/
 
-### 💬 個人のポートフォリオサイト
+### 🗂 個人のポートフォリオサイト
 
 <br>
 
 ## 概要
 
-今まで制作したものの中から、選んだポートフォリオサイトを掲載するサイトです。
+今まで制作したものの中から選んだポートフォリオサイトを掲載するサイトです。
 
 ここで紹介するポートフォリオはすべて個人でデザインから実装まで行いました。
 
