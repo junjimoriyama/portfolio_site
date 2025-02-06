@@ -57,17 +57,17 @@
 
     .alien_svg {
       position: absolute;
-      top: -50px;
+      top: -40px;
       right: -20px;
       animation: alienMove 3s infinite;
 
       @keyframes alienMove {
         0% {
-          transform: rotate(0);
+          transform: translateY(-40px);
         } 50% {
-          transform: rotate(-50deg);
+          transform: translateY(0);
         } 100% {
-          transform: rotate(0);
+          transform: translateY(-40px);
         }
       }
     }
