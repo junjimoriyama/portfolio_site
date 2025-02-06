@@ -1,6 +1,9 @@
 # README
 
-<img width="483" alt="github_README_画像" src="https://github.com/user-attachments/assets/966d9bc6-5115-4778-a3c4-f9bc5e7e8d3b" />
+<img src="https://github.com/user-attachments/assets/3fb3e428-db0a-469d-941b-4311e067a5fd" width="400" alt="git_portfolio">
+
+
+
 
 ### URL: junji-moriyama-portfolio.vercel.app/
 
