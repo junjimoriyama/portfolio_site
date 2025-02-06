@@ -43,14 +43,30 @@
   top: 300px;
   left: -100px;
   animation: moveUFO 60s linear infinite;
-  animation-delay: 20s; // 最初の遅延を設定
+  animation-delay: 20s;
 
   .ufo_svg {
+    .ufo_light {
+      font-size: 13px;
+      animation: lightBlinking 0.5s linear infinite;
+
+      @keyframes lightBlinking {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+    }
     @include bp.media(xs, max) {
       width: 50px;
       height: 50px;
+
     }
   }
+
+  // 15.4 32.6 76.7
 
   @keyframes moveUFO {
     0% {
@@ -89,19 +105,37 @@
       top: 700px;
       left: calc(100% + 300px);
     }
+    55% {
+      top: 800px;
+    }
     60% {
+      top: 650px;
+    }
+    65% {
+      top: 800px;
+    }
+    70% {
       top: 700px;
-      opacity: 1;
+    }
+    75% {
+      top: 850px;
+    }
+    80% {
+      top: 600px;
+    }
+    85% {
+      top: 800px;
     }
     90% {
-      top: 450px;
-      left: calc(100% + 300px);
-      opacity: 0; // 画面外に出たら透明に
+      top: 650px;
+    }
+    95% {
+      top: 800px;
     }
     100% {
-      top: 500px;
+      top: 700px;
       left: -100px;
-      opacity: 0; // 最初は透明
+      opacity: 1;
     }
   }
 
@@ -121,7 +155,7 @@
 }
 .astronaut {
   position: absolute;
-  bottom: 200px;
+  bottom: 100px;
   left: 10px;
   animation: astronautMove 5s linear infinite;
 
