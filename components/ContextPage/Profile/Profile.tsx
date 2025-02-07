@@ -41,7 +41,7 @@ export const Profile = () => {
         森山順司
         <span className='git_link'>
         <Link 
-        href="https://github.com/junjimoriyama?tab=repositories" 
+        href="https://github.com/junjimoriyama" 
         target="_blank"
         rel="noopener noreferrer"
         >

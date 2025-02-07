@@ -15,10 +15,7 @@
   opacity: 0;
   visibility: hidden;
   z-index: 100;
-  // animation: 4s 3s forwards visibleSwitch;
-
-  opacity: 1;
-  visibility: visible;
+  animation: 4s 3s forwards visibleSwitch;
 
   @include bp.media(xs, max) {
     right: 20px;
