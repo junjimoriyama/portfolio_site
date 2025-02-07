@@ -2,7 +2,7 @@
 
 <img src="https://github.com/user-attachments/assets/3fb3e428-db0a-469d-941b-4311e067a5fd" width="400" alt="git_portfolio">
 
-### URL: junji-moriyama-portfolio.vercel.app/
+### URL: https://junji-moriyama-portfolio.vercel.app/
 
 ### 🗂 個人のポートフォリオサイト
 
