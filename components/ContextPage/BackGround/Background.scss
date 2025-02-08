@@ -176,7 +176,7 @@
   position: absolute;
   top: 20%;
   right: -50px;
-  animation: astronautMove 10s linear infinite;
+  animation: saturnMove 10s linear infinite;
 
   .saturn_svg {
     width: 500px;
@@ -187,7 +187,7 @@
     }
   }
 
-  @keyframes astronautMove {
+  @keyframes saturnMove {
         0% {
           transform: translate(0, 0);
         }
@@ -202,6 +202,40 @@
         }
         100% {
           transform: translate(0, 0);
+        }
+      }
+    }
+
+.mars {
+  position: absolute;
+  top: 60%;
+  left: -50px;
+  animation: marsMove 10s linear infinite;
+
+  .mars_svg {
+    width: 350px;
+    height: 350px;
+    @include bp.media(sm, max) {
+      width: 250px;
+      height: 250px;
+    }
+  }
+
+  @keyframes marsMove {
+        0% {
+          transform: translate(0, 0) rotate(90deg);
+        }
+        25% {
+          transform: translate(20px, 20px) rotate(90deg);
+        }
+        50% {
+          transform: translate(0px, 0px) rotate(90deg);
+        }
+        75% {
+          transform: translate(-20px, -20px) rotate(90deg);
+        }
+        100% {
+          transform: translate(0, 0) rotate(90deg);
         }
       }
     }
