@@ -1,15 +1,18 @@
 "use client";
 
+// react
 import React, { useEffect, useRef, useState } from "react";
-import * as THREE from "three";
-
-import "./Background.scss";
 import { useSwitchContext } from "@/components/context/switchProvider";
+// three.js
+import * as THREE from "three";
+// svg
 import { RocketSvg } from "@/assets/svg/RocketSvg";
 import { UFOSvg } from "@/assets/svg/UFO";
-import { AstronautSvg } from "@/assets/svg/Astronaut";
 import { SaturnSvg } from "@/assets/svg/SaturnSvg";
 import { MarseSvg } from "@/assets/svg/MarseSvg";
+import { AstronautSvg } from "@/assets/svg/AstronautSvg";
+// style
+import "./Background.scss";
 
 export const Background: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);

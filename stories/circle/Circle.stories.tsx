@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react"
+import { Meta, StoryObj } from "@storybook/react";
 import Circle from "./Circle";
 import "./Circle.stories.scss";
 
@@ -8,43 +8,64 @@ const meta: Meta<typeof Circle> = {
   argTypes: {
     variant: {
       control: {
-        type: "color"
+        type: "color",
       },
-    } ,
+    },
   },
-  tags: ["autodocs"]
-}
+  tags: ["autodocs"],
+};
 
 export default meta;
 
+const lightColor = () => {
+  return {
+    backgrounds: {
+      default: "light",
+    },
+  };
+};
 
+console.log(lightColor());
 
-type Story = StoryObj<typeof meta>
+type Story = StoryObj<typeof meta>;
 
 /**
 ベースの丸です
 **/
 export const BaseCircle: Story = {
+  parameters: {
+    ...lightColor()
+  },
   args: {
-    variant: "black"
-  }
-}
+    variant: "black",
+  },
+};
 export const GreenCircle: Story = {
+  parameters: {
+    ...lightColor()
+  },
   args: {
-    variant: "green"
-  }
-}
+    variant: "green",
+  },
+};
 export const RedCircle: Story = {
+  parameters: {
+    ...lightColor()
+  },
   args: {
-    variant: "red"
-  }
-}
+    variant: "red",
+  },
+};
 export const GroupCircle: Story = {
+  parameters: {
+    ...lightColor()
+  },
   render: () => (
     <div className="groupCircle">
       <Circle variant="black" />
       <Circle variant="green" />
       <Circle variant="red" />
     </div>
-  )
-}
+  ),
+};
+
