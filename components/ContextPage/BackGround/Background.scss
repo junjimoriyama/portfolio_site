@@ -141,8 +141,8 @@
 }
 .astronaut {
   position: absolute;
-  bottom: 100px;
-  left: 10px;
+  bottom: 120px;
+  left: 10%;
   animation: astronautMove 5s linear infinite;
 
   .astronaut_Svg {
@@ -195,8 +195,12 @@
   animation: 4s 3s forwards visiblePlanet, saturnMove 10s linear infinite;
 
   .saturn_svg {
-    width: 500px;
-    height: 500px;
+    width: 700px;
+    height: 700px;
+    @include bp.media(lg, max) {
+      width: 500px;
+      height: 500px;
+    }
     @include bp.media(sm, max) {
       width: 300px;
       height: 300px;
@@ -229,8 +233,12 @@
   animation: 4s 3s forwards visiblePlanet, marsMove 10s linear infinite;
 
   .mars_svg {
-    width: 350px;
-    height: 350px;
+    width: 500px;
+    height: 500px;
+    @include bp.media(lg, max) {
+      width: 350px;
+      height: 350px;
+    }
     filter: brightness(80%);
     @include bp.media(sm, max) {
       width: 250px;

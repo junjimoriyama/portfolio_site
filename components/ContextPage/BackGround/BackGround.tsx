@@ -15,9 +15,12 @@ import { AstronautSvg } from "@/assets/svg/AstronautSvg";
 import "./Background.scss";
 import {
   EffectComposer,
+  OrbitControls,
   RenderPass,
   UnrealBloomPass,
 } from "three/examples/jsm/Addons.js";
+// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+
 
 export const Background: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -63,6 +66,8 @@ export const Background: React.FC = () => {
 
     // renderer定義
     const renderer = new THREE.WebGLRenderer({ alpha: true });
+    // ピクセル比率を明示的に設定
+    renderer.setPixelRatio(window.devicePixelRatio);
     // renderer画面サイズに
     renderer.setSize(window.innerWidth, window.innerHeight);
     mountRef.current.appendChild(renderer.domElement);
@@ -150,11 +155,21 @@ export const Background: React.FC = () => {
 
     window.addEventListener("resize", onResize);
 
+     // OrbitControls の追加
+     const controls = new OrbitControls(camera, renderer.domElement);
+     controls.enableDamping = true; // 慣性効果を有効化
+     controls.dampingFactor = 0.1; // 慣性の強さ
+     controls.minDistance = 2; // 最小ズーム距離
+     controls.maxDistance = 10; // 最大ズーム距離
+     controls.maxPolarAngle = Math.PI / 2; // 垂直方向の回転制限（例: 真上を見ない）
+ 
+
     // アニメーションループ
     const animate = () => {
       if (!rendererRef.current) return;
+      controls.update();
       particleSystem.rotation.y += 0.0005;
-      renderer.render(scene, camera);
+      // renderer.render(scene, camera);
       sphere.layers.set(1)
       bloomComposer.render()
       animationFrameId.current = requestAnimationFrame(animate);
