@@ -171,12 +171,28 @@
       }
     }
 
+.saturn, .mars {
+  opacity: 0;
+  visibility: hidden;
+  animation: 4s 3s forwards visiblePlanet;
+
+  @keyframes visiblePlanet {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
 
 .saturn {
   position: absolute;
   top: 20%;
   right: -50px;
-  animation: saturnMove 10s linear infinite;
+  animation: 4s 3s forwards visiblePlanet, saturnMove 10s linear infinite;
 
   .saturn_svg {
     width: 500px;
@@ -210,11 +226,12 @@
   position: absolute;
   top: 60%;
   left: -50px;
-  animation: marsMove 10s linear infinite;
+  animation: 4s 3s forwards visiblePlanet, marsMove 10s linear infinite;
 
   .mars_svg {
     width: 350px;
     height: 350px;
+    filter: brightness(80%);
     @include bp.media(sm, max) {
       width: 250px;
       height: 250px;
