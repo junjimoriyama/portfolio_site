@@ -8,6 +8,7 @@ import { useSwitchContext } from "@/components/context/switchProvider";
 import { RocketSvg } from "@/assets/svg/RocketSvg";
 import { UFOSvg } from "@/assets/svg/UFO";
 import { AstronautSvg } from "@/assets/svg/Astronaut";
+import { SaturnSvg } from "@/assets/svg/SaturnSvg";
 
 export const Background: React.FC = () => {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -17,6 +18,8 @@ export const Background: React.FC = () => {
 
   const [isStart, setIsStart] = useState(false);
   const { isSwitchOn } = useSwitchContext();
+
+  let sunMesh: THREE.Mesh | null = null;
 
   // 4秒後にThree.jsを開始
   useEffect(() => {
@@ -46,12 +49,32 @@ export const Background: React.FC = () => {
       0.1,
       1000
     );
-    camera.position.z = 5;
+    camera.position.z = 15;
 
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     mountRef.current.appendChild(renderer.domElement);
     rendererRef.current = renderer;
+
+    // // 太陽の作成（テクスチャなし）
+    // const sunGeometry = new THREE.SphereGeometry(5, 32, 32); // 球体
+    // const sunMaterial = new THREE.MeshStandardMaterial({
+    //   color: new THREE.Color(0xffd700), // 太陽の基本色（黄色）
+    //   emissive: new THREE.Color(0xffa500), // 発光色
+    //   emissiveIntensity: 1.5, // 発光の強さ
+    //   roughness: 0.5, // 表面の荒さ
+    //   metalness: 0.0, // 非金属的な見た目
+    // });
+    // sunMesh = new THREE.Mesh(sunGeometry, sunMaterial);
+    // scene.add(sunMesh);
+
+    // 太陽光
+    // const pointLight = new THREE.PointLight(0xfff3a5, 2, 100);
+    // pointLight.position.set(0, 0, 10);
+    // scene.add(pointLight);
+
+    /* 平行光源 */
+    
 
     // パーティクル用のテクスチャをロード
     const textureLoader = new THREE.TextureLoader();
@@ -63,9 +86,9 @@ export const Background: React.FC = () => {
     const positions = new Float32Array(particleCount * 3);
 
     for (let i = 0; i < particleCount; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 10;
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 10;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 10;
+      positions[i * 3] = (Math.random() - 0.5) * 30;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 30;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 30;
     }
 
     particles.setAttribute("position", new THREE.BufferAttribute(positions, 3));
@@ -97,7 +120,13 @@ export const Background: React.FC = () => {
     // アニメーションループ
     const animate = () => {
       if (!rendererRef.current) return;
+
+      // 太陽の自転
+      if (sunMesh) sunMesh.rotation.y += 0.001;
+
+      // パーティクルの回転
       particleSystem.rotation.y += 0.0005;
+
       renderer.render(scene, camera);
       animationFrameId.current = requestAnimationFrame(animate);
     };
@@ -130,11 +159,20 @@ export const Background: React.FC = () => {
       sceneRef.current.clear();
       sceneRef.current = null;
     }
+
+    if (sunMesh) {
+      sunMesh.geometry.dispose();
+      if (sunMesh.material instanceof THREE.Material) {
+        sunMesh.material.dispose();
+      }
+      sunMesh = null;
+    }
   };
 
   return (
     <>
       {isStart && <div ref={mountRef} className="threejs_container"></div>}
+      <div className="saturn">{!isSwitchOn && <SaturnSvg />}</div>
       <div className="rocket">{!isSwitchOn && <RocketSvg />}</div>
       <div className="ufo">{!isSwitchOn && <UFOSvg />}</div>
       <div className="astronaut">{!isSwitchOn && <AstronautSvg />}</div>

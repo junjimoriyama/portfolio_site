@@ -138,20 +138,6 @@
       opacity: 1;
     }
   }
-
-  // .rocket_fire {
-  //   animation: fireBlinking 0.5s linear infinite;
-
-  //   @keyframes fireBlinking {
-  //     0% {
-  //       opacity: 0;
-  //     }
-  //     100% {
-  //       opacity: 1;
-  //     }
-  //   }
-  // }
-
 }
 .astronaut {
   position: absolute;
@@ -178,6 +164,41 @@
         }
         75% {
           transform: translate(-10px, -10px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+    }
+
+
+.saturn {
+  position: absolute;
+  top: 20%;
+  right: -50px;
+  animation: astronautMove 10s linear infinite;
+
+  .saturn_svg {
+    width: 500px;
+    height: 500px;
+    @include bp.media(sm, max) {
+      width: 300px;
+      height: 300px;
+    }
+  }
+
+  @keyframes astronautMove {
+        0% {
+          transform: translate(0, 0);
+        }
+        25% {
+          transform: translate(20px, 20px);
+        }
+        50% {
+          transform: translate(0px, 0px);
+        }
+        75% {
+          transform: translate(-20px, -20px);
         }
         100% {
           transform: translate(0, 0);
