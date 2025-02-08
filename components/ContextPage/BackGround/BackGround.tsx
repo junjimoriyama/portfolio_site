@@ -59,7 +59,7 @@ export const Background: React.FC = () => {
       1000
     );
     // カメラの距離
-    camera.position.z = 5;
+    camera.position.z = 1;
 
     // renderer定義
     const renderer = new THREE.WebGLRenderer({ alpha: true });
