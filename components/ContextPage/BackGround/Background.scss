@@ -197,7 +197,7 @@
   .saturn_svg {
     width: 700px;
     height: 700px;
-    @include bp.media(lg, max) {
+    @include bp.media(xl, max) {
       width: 500px;
       height: 500px;
     }
@@ -235,7 +235,7 @@
   .mars_svg {
     width: 500px;
     height: 500px;
-    @include bp.media(lg, max) {
+    @include bp.media(xl, max) {
       width: 350px;
       height: 350px;
     }

@@ -5,6 +5,12 @@ import React, { useEffect, useRef, useState } from "react";
 import { useSwitchContext } from "@/components/context/switchProvider";
 // three.js
 import * as THREE from "three";
+import {
+  EffectComposer,
+  OrbitControls,
+  RenderPass,
+  UnrealBloomPass,
+} from "three/examples/jsm/Addons.js";
 // svg
 import { RocketSvg } from "@/assets/svg/RocketSvg";
 import { UFOSvg } from "@/assets/svg/UFO";
@@ -13,12 +19,6 @@ import { MarseSvg } from "@/assets/svg/MarseSvg";
 import { AstronautSvg } from "@/assets/svg/AstronautSvg";
 // style
 import "./Background.scss";
-import {
-  EffectComposer,
-  OrbitControls,
-  RenderPass,
-  UnrealBloomPass,
-} from "three/examples/jsm/Addons.js";
 // import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 
@@ -91,31 +91,29 @@ export const Background: React.FC = () => {
     bloomComposer.addPass(rendererScreen);
     bloomComposer.addPass(bloomPass);
 
-    const color = new THREE.Color("#FD8813");
-
+    
     // 球体の作成
-    const geometry = new THREE.IcosahedronGeometry(0.5, 15);
-    const material = new THREE.MeshStandardMaterial({
-      color: color,
-      emissive: color, // 発光色
-      emissiveIntensity: 2, // 発光の強度
-    });
-    const sphere = new THREE.Mesh(geometry, material);
-    sphere.position.set(0, 0, 0);
-    sphere.layers.set(1)
-    scene.add(sphere);
+    // const color = new THREE.Color("#FD8813");
+    // const geometry = new THREE.IcosahedronGeometry(0.5, 15);
+    // const material = new THREE.MeshStandardMaterial({
+    //   color: color,
+    //   emissive: color, // 発光色
+    //   emissiveIntensity: 2, // 発光の強度
+    // });
+    // const sphere = new THREE.Mesh(geometry, material);
+    // sphere.position.set(0, 0, 0);
+    // sphere.layers.set(1)
+    // scene.add(sphere);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.1); // 環境光を追加
-    scene.add(ambientLight);
-
-
+    // const ambientLight = new THREE.AmbientLight(0xffffff, 0.1); // 環境光を追加
+    // scene.add(ambientLight);
 
     // パーティクル用のテクスチャをロード
     const textureLoader = new THREE.TextureLoader();
     const particleTexture = textureLoader.load("/images/star.png");
 
     // パーティクルの作成
-    const particleCount = 4000;
+    const particleCount = 7000;
     const particles = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
 
@@ -169,8 +167,7 @@ export const Background: React.FC = () => {
       if (!rendererRef.current) return;
       controls.update();
       particleSystem.rotation.y += 0.0005;
-      // renderer.render(scene, camera);
-      sphere.layers.set(1)
+      // sphere.layers.set(1)
       bloomComposer.render()
       animationFrameId.current = requestAnimationFrame(animate);
     };
