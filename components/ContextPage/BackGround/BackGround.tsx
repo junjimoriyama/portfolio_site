@@ -133,7 +133,7 @@ export const Background: React.FC = () => {
     const particleMaterial = new THREE.PointsMaterial({
       map: particleTexture,
       color: 0xffffff,
-      size: 0.02,
+      size: 0.04,
       transparent: true,
       alphaTest: 0.5,
       depthWrite: false,
