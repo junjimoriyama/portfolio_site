@@ -171,7 +171,7 @@
       }
     }
 
-.saturn, .mars {
+.neptune, .saturn, .mars {
   opacity: 0;
   visibility: hidden;
   animation: 4s 3s forwards visiblePlanet;
@@ -264,4 +264,42 @@
         }
       }
     }
+
+  .neptune {
+    position: absolute;
+    top: 2%;
+    left: 50px;
+    animation: 4s 3s forwards visiblePlanet, neptuneMove 10s linear infinite;
+    .neptune_svg {
+      width: 200px;
+      height: 200px;
+      @include bp.media(xl, max) {
+        width: 150px;
+        height: 150px;
+      }
+      filter: brightness(80%);
+      @include bp.media(sm, max) {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    @keyframes neptuneMove {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+      25% {
+        transform: translate(20px, 20px);
+      }
+      50% {
+        transform: translate(0px, 0px) scale(1.1);
+      }
+      75% {
+        transform: translate(-20px, -20px);
+      }
+      100% {
+        transform: translate(0, 0) scale(1);;
+      }
+    }
+  }
 

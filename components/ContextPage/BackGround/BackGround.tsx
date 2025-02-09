@@ -19,6 +19,7 @@ import { MarseSvg } from "@/assets/svg/MarseSvg";
 import { AstronautSvg } from "@/assets/svg/AstronautSvg";
 // style
 import "./Background.scss";
+import { NeptuneSvg } from "@/assets/svg/NeptuneSvg";
 // import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 
@@ -133,7 +134,7 @@ export const Background: React.FC = () => {
     const particleMaterial = new THREE.PointsMaterial({
       map: particleTexture,
       color: 0xffffff,
-      size: 0.04,
+      size: 0.035,
       transparent: true,
       alphaTest: 0.5,
       depthWrite: false,
@@ -215,6 +216,7 @@ export const Background: React.FC = () => {
       <div className="rocket">{!isSwitchOn && <RocketSvg />}</div>
       <div className="ufo">{!isSwitchOn && <UFOSvg />}</div>
       <div className="astronaut">{!isSwitchOn && <AstronautSvg />}</div>
+      <div className="neptune">{!isSwitchOn && <NeptuneSvg />}</div>
     </>
   );
 };
