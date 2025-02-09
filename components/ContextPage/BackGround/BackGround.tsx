@@ -81,8 +81,11 @@ export const Background: React.FC = () => {
       0.1, // 半径
       0.85 // しきい値
     );
+    // ブルームの適用範囲
     bloomPass.threshold = 0.2;
-    bloomPass.strength = 1.5
+    // 発光効果の強さ
+    bloomPass.strength = 1
+    // ブルームの広がり
     bloomPass.radius = 0.1;
 
     const bloomComposer = new EffectComposer(renderer);
@@ -130,7 +133,7 @@ export const Background: React.FC = () => {
     const particleMaterial = new THREE.PointsMaterial({
       map: particleTexture,
       color: 0xffffff,
-      size: 0.015,
+      size: 0.02,
       transparent: true,
       alphaTest: 0.5,
       depthWrite: false,
@@ -167,6 +170,7 @@ export const Background: React.FC = () => {
       if (!rendererRef.current) return;
       controls.update();
       particleSystem.rotation.y += 0.0005;
+
       // sphere.layers.set(1)
       bloomComposer.render()
       animationFrameId.current = requestAnimationFrame(animate);
