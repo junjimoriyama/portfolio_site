@@ -83,7 +83,7 @@ export const Background: React.FC = () => {
     );
     bloomPass.threshold = 0.2;
     bloomPass.strength = 1.5
-    bloomPass.radius = 0.01;
+    bloomPass.radius = 0.1;
 
     const bloomComposer = new EffectComposer(renderer);
     bloomComposer.setSize(window.innerWidth, window.innerHeight);
