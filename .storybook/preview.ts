@@ -21,6 +21,11 @@ const preview: Preview = {
           value: "#ffffff"
         }
       ]
+    },
+    docs: {
+      source: {
+        type: "code"
+      }
     }
   },
 };

@@ -1,6 +1,7 @@
 // import { AstronautSvg } from "@/assets/svg/Astronaut";
 
-import { AstronautSvg, MarseSvg, RocketSvg, SaturnSvg, UFOSvg, EarthSvg } from "./Svg";
+import { parameter } from "three/tsl";
+import { AstronautSvg, MarseSvg, RocketSvg, SaturnSvg, UFOSvg, EarthSvg, NeptuneSvg, AlienSvg } from "./Svg";
 
 const Meta = {
   component: AstronautSvg,
@@ -13,6 +14,11 @@ export default Meta;
 // 地球
 export const Earth = {
   render: () => <EarthSvg/>,
+}
+
+// 海王星
+export const Neptune = {
+  render: () => <NeptuneSvg />,
 }
 
 // 土星
@@ -35,7 +41,17 @@ export const UFO = {
   render: () => <UFOSvg/>,
 }
 
+
 // 宇宙飛行士
-export const Astronaut = {
-  render: () => <AstronautSvg />,
+export const Astronaut = () => <AstronautSvg />;
+
+
+// 宇宙人
+export const Alien = {
+  render: () => 
+    <div className="groupAlien">
+      <AlienSvg variant="deepGreen"/>
+      <AlienSvg variant="green"/>
+      <AlienSvg variant="lightgreen"/>
+    </div>
 }

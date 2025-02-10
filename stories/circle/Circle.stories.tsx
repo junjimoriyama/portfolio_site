@@ -25,8 +25,6 @@ const lightColor = () => {
   };
 };
 
-console.log(lightColor());
-
 type Story = StoryObj<typeof meta>;
 
 /**
