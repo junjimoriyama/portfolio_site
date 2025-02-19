@@ -20,8 +20,8 @@ export const Profile = () => {
     description: useRef(null),
   }
 
-  const [ isMyNameVisible, setIsMyNameVisible  ] = useState(false)
-  const [ isDescriptionVisible, setIsDescriptionVisible ] = useState(false)
+  const [ isMyNameVisible, setIsMyNameVisible  ] = useState(false);
+  const [ isDescriptionVisible, setIsDescriptionVisible ] = useState(false);
 
   useIntersectionObserver(refs.myName, setIsMyNameVisible, {
     threshold : 0.5

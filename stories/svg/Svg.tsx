@@ -416,7 +416,6 @@ export const RocketSvg = () => {
     </svg>
   );
 };
-
 // UFO
 export const UFOSvg = () => {
   return (
@@ -474,7 +473,6 @@ export const UFOSvg = () => {
     </svg>
   );
 };
-
 // 宇宙飛行士
 export const AstronautSvg = () => {
   return (

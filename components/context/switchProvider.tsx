@@ -7,12 +7,12 @@ const switchContext = createContext<{
   isSwitchOn: boolean;
   setIsSwitchOn: (value: boolean) => void;
 }>({
-  isSwitchOn: false,
+  isSwitchOn: true,
   setIsSwitchOn: () => {}
 })
 
 export const SwitchProvider = ({children} : { children: React.ReactNode}) => {
-  const [isSwitchOn, setIsSwitchOn] = useState(false);
+  const [isSwitchOn, setIsSwitchOn] = useState(true);
 
   return (
     <switchContext.Provider

@@ -13,6 +13,7 @@ import { PcSvg } from "@/assets/svg/PcSvg";
 // style
 import "./Creation.scss";
 import { AlienSvg_DG, AlienSvg_G, AlienSvg_LG } from "@/assets/svg/Alien";
+import { GitIcon } from "@/assets/svg/GitIcon";
 
 export const Creation = () => {
   const { isSwitchOn } = useSwitchContext();
@@ -78,14 +79,16 @@ export const Creation = () => {
 
   return (
     <div className="creation">
-      <div 
-      className={`creation_title ${isTitleVisible ? "isVisible" : ""}`}
-      ref={refs.titleRef}
+      <div
+        className={`creation_title ${isTitleVisible ? "isVisible" : ""}`}
+        ref={refs.titleRef}
       >
         {creationTitle.map((word, index) => {
           return (
             <span
-              className={`creation_title_word ${(index + 1) % 2 !== 0 ? "odd" : "even"}`}
+              className={`creation_title_word ${
+                (index + 1) % 2 !== 0 ? "odd" : "even"
+              }`}
               key={`${word}-${index}`}
             >
               {word}
@@ -133,6 +136,15 @@ export const Creation = () => {
             <div className="creation_item_description">
               働く吃音ある方の体験談集
             </div>
+            <div className="creation_item_git">
+              <Link
+                href="https://github.com/junjimoriyama/stuttering-job"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GitIcon />
+              </Link>
+            </div>
           </div>
         </li>
 
@@ -173,6 +185,15 @@ export const Creation = () => {
             <div className="creation_item_description">
               個人で撮影した写真ギャラリーサイト
             </div>
+            <div className="creation_item_git">
+              <Link
+                href="https://github.com/junjimoriyama/photo_website"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GitIcon />
+              </Link>
+            </div>
           </div>
         </li>
 
@@ -211,6 +232,15 @@ export const Creation = () => {
             <div className="creation_item_description">
               TODOリスト管理アプリ
             </div>
+            <div className="creation_item_git">
+              <Link
+                href="https://github.com/junjimoriyama/task_management"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GitIcon />
+              </Link>
+            </div>
           </div>
         </li>
 
@@ -248,6 +278,15 @@ export const Creation = () => {
             </div>
             <div className="creation_item_description">
               仮想ショッピングページ
+            </div>
+            <div className="creation_item_git">
+              <Link
+                href="https://github.com/junjimoriyama/shopping-app-NEXT"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GitIcon />
+              </Link>
             </div>
           </div>
         </li>

@@ -8,7 +8,7 @@ import "./Light.scss";
 export const Light = () => {
 
   // ライトの状態
-  const { isSwitchOn } = useSwitchContext()
+  const { isSwitchOn } = useSwitchContext();
   
   return (
     <div  className="light">

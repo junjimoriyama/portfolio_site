@@ -3,6 +3,7 @@ import React from "react";
 export const GitIcon = () => {
   return (
     <svg
+      className="git_icon"
       xmlns="http://www.w3.org/2000/svg"
       x="0px"
       y="0px"

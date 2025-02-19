@@ -1,6 +1,6 @@
 
 // react
-import { SwitchProvider } from '../context/switchProvider'
+import { SwitchProvider } from '../context/switchProvider';
 // components
 import { FirstView } from './FirstView/FirstView';
 import { Creation } from './Creation/Creation';

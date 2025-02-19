@@ -1,15 +1,15 @@
 "use client"
 
 // react
-import { useRef } from 'react'
+import { useRef } from 'react';
 // components
-import { useSwitchContext } from '@/components/context/switchProvider'
+import { useSwitchContext } from '@/components/context/switchProvider';
 // style
-import './Switch.scss'
+import './Switch.scss';
 
 export const Switch = () => {
 
-  const { isSwitchOn, setIsSwitchOn} = useSwitchContext()
+  const { isSwitchOn, setIsSwitchOn} = useSwitchContext();
   // switchボタン
   const switchRef = useRef<HTMLDivElement | null>(null);
 
