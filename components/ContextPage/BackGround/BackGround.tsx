@@ -95,23 +95,6 @@ export const Background: React.FC = () => {
     bloomComposer.addPass(rendererScreen);
     bloomComposer.addPass(bloomPass);
 
-    
-    // 球体の作成
-    // const color = new THREE.Color("#FD8813");
-    // const geometry = new THREE.IcosahedronGeometry(0.5, 15);
-    // const material = new THREE.MeshStandardMaterial({
-    //   color: color,
-    //   emissive: color, // 発光色
-    //   emissiveIntensity: 2, // 発光の強度
-    // });
-    // const sphere = new THREE.Mesh(geometry, material);
-    // sphere.position.set(0, 0, 0);
-    // sphere.layers.set(1)
-    // scene.add(sphere);
-
-    // const ambientLight = new THREE.AmbientLight(0xffffff, 0.1); // 環境光を追加
-    // scene.add(ambientLight);
-
     // パーティクル用のテクスチャをロード
     const textureLoader = new THREE.TextureLoader();
     const particleTexture = textureLoader.load("/images/star.png");

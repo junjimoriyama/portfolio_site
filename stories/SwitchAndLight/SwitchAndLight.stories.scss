@@ -1,0 +1,12 @@
+@use "@/style/breakpoint.scss" as bp;
+
+.sb-show-main {
+  .css-xzp052 {
+    height: 300px;
+  }
+  .switch, .light {
+    opacity: 1 !important;
+    visibility: visible !important;
+    animation: none !important; 
+  }
+}

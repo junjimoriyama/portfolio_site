@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
 import "@/app/globals.css"
+import "@/stories/SwitchAndLight/SwitchAndLight.stories.scss"
 
 const preview: Preview = {
   parameters: {
