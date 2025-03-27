@@ -133,8 +133,13 @@ export const Creation = () => {
               <span>APPLICATION</span>
               <span>レスポンシブ</span>
             </div>
+            <div className="creation_item_skills">
+              <span>TypeScript</span>
+              <span>Next.js</span>
+              <span>RubyOnRails</span>
+            </div>
             <div className="creation_item_description">
-              働く吃音ある方の体験談集
+              働く吃音ある方の体験談集<span>(テスト運用)</span>
             </div>
             <div className="creation_item_git">
               <Link
@@ -181,6 +186,10 @@ export const Creation = () => {
             <div className="creation_item_type">
               <span>SITE</span>
               <span>レスポンシブ</span>
+            </div>
+            <div className="creation_item_skills">
+              <span>TypeScript</span>
+              <span>React</span>
             </div>
             <div className="creation_item_description">
               個人で撮影した写真ギャラリーサイト
@@ -229,6 +238,11 @@ export const Creation = () => {
             <div className="creation_item_type">
               <span>APPLICATION</span>
             </div>
+            <div className="creation_item_skills">
+              <span>TypeScript</span>
+              <span>Vue.js</span>
+              <span>Nuxt.js</span>
+            </div>
             <div className="creation_item_description">
               TODOリスト管理アプリ
             </div>
@@ -275,6 +289,10 @@ export const Creation = () => {
             <div className="creation_item_title">SUPER MARKET</div>
             <div className="creation_item_type">
               <span>APPLICATION</span>
+            </div>
+            <div className="creation_item_skills">
+              <span>TypeScript</span>
+              <span>Next.js</span>
             </div>
             <div className="creation_item_description">
               仮想ショッピングページ
@@ -324,6 +342,11 @@ export const Creation = () => {
               <span>SITE</span>
               <span>レスポンシブ</span>
             </div>
+            <div className="creation_item_skills">
+              <span>JavaScript</span>
+              <span>HTML</span>
+              <span>CSS</span>
+            </div>
             <div className="creation_item_description">
               フォトグラファー紹介サイト
             </div>
@@ -363,6 +386,11 @@ export const Creation = () => {
             <div className="creation_item_type">
               <span>SITE</span>
               <span>レスポンシブ</span>
+            </div>
+            <div className="creation_item_skills">
+              <span>JavaScript</span>
+              <span>HTML</span>
+              <span>CSS</span>
             </div>
             <div className="creation_item_description">
               ドラムスクールサイト

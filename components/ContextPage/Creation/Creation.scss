@@ -247,9 +247,10 @@
         }
         .creation_item_type {
           display: flex;
-          margin-bottom: 10px;
           gap: 10px;
           letter-spacing: 0.1em;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #fff;
           span {
             padding: 3px 5px;
             background-color: #fff;
@@ -258,9 +259,26 @@
             font-size: 14px;
           }
         }
+
+        .creation_item_skills {
+          display: flex;
+          margin-bottom: 10px;
+          gap: 10px;
+          letter-spacing: 0.1em;
+          span {
+            padding: 3px 5px;
+            background-color: #727272;
+            color: #fff;
+            border-radius: 2px;
+            font-size: 14px;
+          }
+        }
         .creation_item_description {
           text-shadow: -1px -1px #0a0a0a, 1px -1px #0a0a0a, -1px 1px #0a0a0a,
             1px 1px #0a0a0a;
+            span {
+              font-size: 12px;
+            }
         }
         .creation_item_git {
           .git_icon {

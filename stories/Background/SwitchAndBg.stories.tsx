@@ -15,7 +15,6 @@ const meta: Meta = {
       </SwitchProvider>
     )
   ],
-  tags: ["autodocs"],
 };
 
 export default meta;

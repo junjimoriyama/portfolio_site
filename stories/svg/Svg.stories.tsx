@@ -1,7 +1,7 @@
 // storybook
 import { Meta, StoryObj } from "@storybook/react";
 // component
-import { AstronautSvg, MarseSvg, RocketSvg, SaturnSvg, UFOSvg, EarthSvg, NeptuneSvg, AlienSvg } from "./Svg";
+import { AstronautSvg, MarseSvg, RocketSvg, SaturnSvg, UFOSvg, EarthSvg, NeptuneSvg, AlienSvg, PcSvg } from "./Svg";
 
 const meta: Meta = {
   title: "SVG",
@@ -84,3 +84,9 @@ export const Alien = {
       <AlienSvg variant="lightgreen"/>
     </div>
 }
+
+// パソコン
+export const Pc = {
+  render: () => <PcSvg />
+} 
+ 
