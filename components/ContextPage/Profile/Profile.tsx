@@ -2,11 +2,13 @@
 
 // functions
 import useIntersectionObserver from "@/functions/functions";
-
+// componetnents
+import { useSwitchContext } from "@/components/context/switchProvider";
+// svg
+import { CameraSvg } from "@/assets/svg/CameraSvg";
 // style
 import "./Profile.scss";
 import { useRef, useState } from "react";
-import { useSwitchContext } from "@/components/context/switchProvider";
 
 export const Profile = () => {
   const { isSwitchOn } = useSwitchContext();
@@ -29,12 +31,15 @@ export const Profile = () => {
   return (
     <div className={`profile ${isSwitchOn ? "isSwitchOn" : ""}`}>
       <div className="profile_wrap">
+      <div className="profile_heading">
         <div
           className={`profile_myName ${isMyNameVisible ? "isVisible" : ""}`}
           ref={refs.myName}
         >
           森山順司
         </div>
+        <CameraSvg />
+      </div>
 
         <div
           className={`profile_description ${
