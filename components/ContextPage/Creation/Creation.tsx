@@ -34,7 +34,7 @@ export const Creation = () => {
   // title
   const creationTitle = "ポートフォリオ".split("");
 
-  // ref
+  // refs
   const refs = {
     photoSiteRef: useRef<HTMLLIElement | null>(null),
     stutteringJobRef: useRef<HTMLLIElement | null>(null),
