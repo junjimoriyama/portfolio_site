@@ -32,7 +32,7 @@ export const Skills = () => {
   const [isDesignVisible, setIsDesignVisible] = useState(false);
   const [isGitHubVisible, setIsGitHubVisible] = useState(false);
 
-   // intersectionObserver
+  // intersectionObserver
   useIntersectionObserver(refs.HTMLRef, setIsHTMLVisible, {
     threshold: 0.5,
   });
@@ -61,89 +61,151 @@ export const Skills = () => {
     threshold: 0.5,
   });
 
-
   return (
     <div className="skills">
       <div className="skills_title">主にできること</div>
       <ul className="skills_list">
         {/* HTML */}
-        <li className={`skills_item ${isHTMLVisible ? "isVisible" : ""}`} ref={refs.HTMLRef}>
+        <li
+          className={`skills_item ${isHTMLVisible ? "isVisible" : ""}`}
+          ref={refs.HTMLRef}
+        >
           <p className="skill_name">HTML</p>
-          <img className="skill_image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+          <img
+            className="skill_image"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+          />
           <p className="skill_description">
-            基本的なマークアップに加え、SEO対策を意識したコーディングが可能です。<br />
+            基本的なマークアップに加え、SEO対策を意識したコーディングが可能です。
+            <br />
             また、フォームのバリデーション、アクセシビリティ対応、data属性を活用したJSとの連携といった応用的な実装にも対応できます。
           </p>
         </li>
 
         {/* CSS */}
-        <li className={`skills_item ${isCSSVisible ? "isVisible" : ""}`} ref={refs.CSSRef}>
+        <li
+          className={`skills_item ${isCSSVisible ? "isVisible" : ""}`}
+          ref={refs.CSSRef}
+        >
           <p className="skill_name">CSS</p>
-          <img className="skill_image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+          <img
+            className="skill_image"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+          />
           <p className="skill_description">
             CSSによる基本的なスタイリングから、レイアウト設計、レスポンシブ対応、アニメーション表現、効率的な設計まで幅広く対応できます。さらに、CSS変数を活用することで、スタイルの一括管理や保守性の高い設計にも対応しています。
           </p>
         </li>
 
-        {/* JavaScript */}
-        <li className={`skills_item ${isJavaScriptVisible ? "isVisible" : ""}`} ref={refs.javaScriptRef}>
-          <p className="skill_name">JavaScript</p>
-          <img className="skill_image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+        {/* JavaScript/TypeScript */}
+        <li
+          className={`skills_item ${isJavaScriptVisible ? "isVisible" : ""}`}
+          ref={refs.javaScriptRef}
+        >
+          <p className="skill_name">JavaScript / TypeScript</p>
+          <div className="skill_images">
+            <img
+              className="skill_image"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+            />
+            <img
+              className="skill_image"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+            />
+          </div>
           <p className="skill_description">
-            JavaScriptで、ユーザー操作に応じたアニメーションの制御や、APIを使った非同期通信、ローカルストレージへのデータ保存、イベント処理による動的なUIの実装など、基本から応用まで幅広く対応できます。
+            ユーザー操作に応じたアニメーションの制御や、APIを使った非同期通信、ローカルストレージへのデータ保存、イベント処理による動的なUIの実装など、基本から応用まで幅広く対応できます。また、型定義によって、安全性と保守性の高いコード設計にも対応しています。
           </p>
         </li>
 
         {/* SCSS */}
-        <li className={`skills_item ${isSCSSVisible ? "isVisible" : ""}`} ref={refs.SCSSRef}>
+        <li
+          className={`skills_item ${isSCSSVisible ? "isVisible" : ""}`}
+          ref={refs.SCSSRef}
+        >
           <p className="skill_name">SCSS</p>
-          <img className="skill_image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg" />
+          <img
+            className="skill_image"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg"
+          />
           <p className="skill_description">
             SCSSでは、色やサイズを変数でまとめて管理したり、スタイルを繰り返し自動生成することができます。また、ネストを使って階層構造をわかりやすく整理したり、ミックスインで共通スタイルを使い回すこともでき、効率よくスタイルを組み立てられます。
           </p>
         </li>
 
         {/* React */}
-        <li className={`skills_item ${isReactVisible ? "isVisible" : ""}`} ref={refs.ReactRef}>
+        <li
+          className={`skills_item ${isReactVisible ? "isVisible" : ""}`}
+          ref={refs.ReactRef}
+        >
           <p className="skill_name">React</p>
-          <img className="skill_image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
+          <img
+            className="skill_image"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+          />
           <p className="skill_description">
             コンポーネントの設計や状態管理などの基本からHooksを使ったデータ管理やイベント処理、API連携、Reduxによるグローバルな状態管理まで、実践的なアプリ開発に必要な機能を一通り実装できます。
           </p>
         </li>
 
         {/* Next.js */}
-        <li className={`skills_item ${isNextVisible ? "isVisible" : ""}`} ref={refs.NextRef}>
+        <li
+          className={`skills_item ${isNextVisible ? "isVisible" : ""}`}
+          ref={refs.NextRef}
+        >
           <p className="skill_name">Next.js</p>
-          <img className="skill_image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" />
+          <img
+            className="skill_image"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg"
+          />
           <p className="skill_description">
             ページの切り替えやAPIの作成などの基本機能、サーバーサイドでのデータ取得やページごとのレイアウトの切り替え、動的なURLのルーティングなど、Next.jsの機能を使った実用的なサイトやアプリケーション作りにも対応できます。
           </p>
         </li>
 
         {/* PHP */}
-        <li className={`skills_item ${isPHPVisible ? "isVisible" : ""}`} ref={refs.PHPRef}>
+        <li
+          className={`skills_item ${isPHPVisible ? "isVisible" : ""}`}
+          ref={refs.PHPRef}
+        >
           <p className="skill_name">PHP</p>
-          <img className="skill_image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" />
+          <img
+            className="skill_image"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+          />
           <p className="skill_description">
             PHPの基本的な文法に加えて、Laravelを用いたルーティングやコントローラーの実装、データベースとの連携を通じたCRUD処理（登録・表示・更新・削除）にも対応できます。
           </p>
         </li>
 
         {/* Illustrator / Photoshop */}
-        <li className={`skills_item ${isDesignVisible ? "isVisible" : ""}`} ref={refs.DesignRef}>
+        <li
+          className={`skills_item ${isDesignVisible ? "isVisible" : ""}`}
+          ref={refs.DesignRef}
+        >
           <p className="skill_name">Illustrator / Photoshop</p>
           <div className="skill_images">
-            <img className="skill_image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-line.svg" />
-            <img className="skill_image" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" />
+            <img
+              className="skill_image"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-line.svg"
+            />
+            <img
+              className="skill_image"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg"
+            />
           </div>
           <p className="skill_description">
-            Illustratorでは、アイコンの作成や図形・文字の配置など基本的な操作に対応でき、前職ではチラシ制作も行ってきました。<br /> Photoshopでは、写真の色味・明るさの調整など、基本的な画像加工が可能です。
+            Illustratorでは、アイコンの作成や図形・文字の配置など基本的な操作に対応でき、前職ではチラシ制作も行ってきました。
+            <br />{" "}
+            Photoshopでは、写真の色味・明るさの調整など、基本的な画像加工が可能です。
           </p>
         </li>
 
         {/* GitHub */}
-        <li className={`skills_item ${isGitHubVisible ? "isVisible" : ""}`} ref={refs.GitHubRef}>
+        <li
+          className={`skills_item ${isGitHubVisible ? "isVisible" : ""}`}
+          ref={refs.GitHubRef}
+        >
           <p className="skill_name">GitHub</p>
           <i className="devicon-github-original"></i>
           <p className="skill_description">
