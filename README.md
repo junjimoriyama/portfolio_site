@@ -24,4 +24,5 @@
 | **Tooling** 　　　　 | Storybook      |
 | **Design**         | Illustrator         |
 | **Editor**         | VSCode              |
+
 <img alt="my skills" src="https://skillicons.dev/icons?theme=dark&perline=7&i=html,css,scss,ts,react,next,threejs,vercel,illustrator,svg,vscode,github" />

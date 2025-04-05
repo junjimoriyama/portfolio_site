@@ -140,7 +140,7 @@ export const Creation = () => {
               <span>RubyOnRails</span>
             </div>
             <div className="creation_item_description">
-              働く吃音ある方の体験談集<span>(テスト運用)</span>
+              働く吃音ある方の体験談集<span>(テスト運用中)</span>
             </div>
             <div className="creation_item_git">
               <Link
@@ -442,7 +442,7 @@ export const Creation = () => {
               <span>Laravel</span>
             </div>
             <div className="creation_item_description">
-              webクイズアプリ
+              webクイズアプリ<span>(個人開発・学習用)</span>
             </div>
           </div>
         </li>
