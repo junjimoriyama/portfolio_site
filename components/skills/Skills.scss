@@ -1,3 +1,5 @@
+@use "@/style/breakpoint.scss" as bp;
+
 .skills {
   max-width: 1000px;
   width: 100%;
@@ -15,6 +17,14 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
+
+    @include bp.media(md, max) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include bp.media(xs, max) {
+      grid-template-columns: repeat(1, 1fr);
+    }
     
     .skillsItem {
       display: flex;
@@ -24,13 +34,25 @@
       padding: 10px;
       border: 1px solid #fff;
       border-radius: 5px;
+      background-color: #222;
 
+      .skillImages {
+        display: flex;
+        gap: 20px;
+      }
       .skillImage {
         width: 50px;
         height: 50px;
       }
       .skillDescription {
+        display: flex;
+        align-items: center;
+        height: 100%;
         font-size: 14px;
+        padding: 5px 10px;
+      }
+      .devicon-github-original {
+        font-size: 50px;
       }
     }
   }
