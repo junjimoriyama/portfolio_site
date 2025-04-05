@@ -245,7 +245,7 @@ export const Creation = () => {
               <span>Vue.js</span>
             </div>
             <div className="creation_item_description">
-              TODOリスト管理アプリ<span>(個人開発)</span>
+              TODOリスト管理アプリ<span>(個人開発・学習用)</span>
             </div>
             <div className="creation_item_git">
               <Link
@@ -297,7 +297,7 @@ export const Creation = () => {
               <span>React</span>
             </div>
             <div className="creation_item_description">
-              仮想ショッピングページ<span>(個人開発)</span>
+              仮想ショッピングページ<span>(個人開発・学習用)</span>
             </div>
             <div className="creation_item_git">
               <Link
