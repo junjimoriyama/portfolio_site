@@ -98,7 +98,7 @@ export const Skills = () => {
 
         {/* PHP */}
         <li className="skillsItem">
-          <p className="skillName">illustrator / Photoshop</p>
+          <p className="skillName">Illustrator / Photoshop</p>
           <div className="skillImages">
             <img
               className="skillImage"

@@ -8,22 +8,22 @@ const switchContext = createContext<{
   setIsSwitchOn: (value: boolean) => void;
 }>({
   isSwitchOn: true,
-  setIsSwitchOn: () => {}
-})
+  setIsSwitchOn: () => {},
+});
 
-export const SwitchProvider = ({children} : { children: React.ReactNode}) => {
+export const SwitchProvider = ({ children }: { children: React.ReactNode }) => {
   const [isSwitchOn, setIsSwitchOn] = useState(true);
 
   return (
     <switchContext.Provider
-     value={{
-      isSwitchOn,
-      setIsSwitchOn
-     }}
+      value={{
+        isSwitchOn,
+        setIsSwitchOn,
+      }}
     >
       {children}
     </switchContext.Provider>
-  )
-}
+  );
+};
 
-export const useSwitchContext = () => useContext(switchContext)
+export const useSwitchContext = () => useContext(switchContext);
