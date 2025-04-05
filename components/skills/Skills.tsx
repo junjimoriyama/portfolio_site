@@ -168,7 +168,7 @@ export const Skills = () => {
           className={`skills_item ${isPHPVisible ? "isVisible" : ""}`}
           ref={refs.PHPRef}
         >
-          <p className="skill_name">PHP</p>
+          <p className="skill_name">PHP / Laravel</p>
           <div className="skill_images">
             <img
               className="skill_image"
