@@ -1,11 +1,8 @@
 "use client";
 
-// next
-import Link from "next/link";
 // functions
 import useIntersectionObserver from "@/functions/functions";
-// svg
-import { GitIcon } from "@/assets/svg/GitIcon";
+
 // style
 import "./Profile.scss";
 import { useRef, useState } from "react";
