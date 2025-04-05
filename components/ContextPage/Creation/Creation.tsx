@@ -404,7 +404,7 @@ export const Creation = () => {
           className={`creation_item ${isTodoVisible ? "isVisible" : ""}`}
           ref={refs.todoRef}
         >
-          {!isSwitchOn && <AlienSvg_LG />}
+          {!isSwitchOn && <AlienSvg_DG />}
           <PcSvg />
           <div
             className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
