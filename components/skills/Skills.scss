@@ -1,6 +1,7 @@
 @use "@/style/breakpoint.scss" as bp;
 
 .skills {
+  position: relative;
   max-width: 1000px;
   width: 100%;
   margin-bottom: 100px;
