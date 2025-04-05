@@ -13,7 +13,6 @@ import { PcSvg } from "@/assets/svg/PcSvg";
 // style
 import "./Creation.scss";
 import { AlienSvg_DG, AlienSvg_G, AlienSvg_LG } from "@/assets/svg/Alien";
-import { GitIcon } from "@/assets/svg/GitIcon";
 
 export const Creation = () => {
   const { isSwitchOn } = useSwitchContext();
@@ -101,7 +100,6 @@ export const Creation = () => {
         <li
           className={`creation_item ${isStutteringVisible ? "isVisible" : ""}`}
           ref={refs.stutteringJobRef}
-          // "creation_item"
         >
           <PcSvg />
           {!isSwitchOn && <AlienSvg_DG />}
@@ -148,7 +146,7 @@ export const Creation = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <GitIcon />
+                {/* <GitIcon /> */}
               </Link>
             </div>
           </div>
@@ -201,7 +199,7 @@ export const Creation = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <GitIcon />
+                {/* <GitIcon /> */}
               </Link>
             </div>
           </div>
@@ -253,7 +251,7 @@ export const Creation = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <GitIcon />
+                {/* <GitIcon /> */}
               </Link>
             </div>
           </div>
@@ -305,7 +303,7 @@ export const Creation = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <GitIcon />
+                {/* <GitIcon /> */}
               </Link>
             </div>
           </div>

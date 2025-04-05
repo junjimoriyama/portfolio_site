@@ -4,7 +4,8 @@
 import Link from "next/link";
 // functions
 import useIntersectionObserver from "@/functions/functions";
-
+// svg
+import { GitIcon } from "@/assets/svg/GitIcon";
 // style
 import "./Profile.scss";
 import { useRef, useState } from "react";
@@ -36,15 +37,6 @@ export const Profile = () => {
           ref={refs.myName}
         >
           森山順司
-          <span className="git_link">
-            {/* <Link
-              href="https://github.com/junjimoriyama"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GitIcon />
-            </Link> */}
-          </span>
         </div>
 
         <div
