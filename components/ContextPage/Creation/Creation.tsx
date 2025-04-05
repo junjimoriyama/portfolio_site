@@ -399,6 +399,53 @@ export const Creation = () => {
             </div>
           </div>
         </li>
+
+
+        {/* drum school */}
+        <li
+          className={`creation_item ${isDrumVisible ? "isVisible" : ""}`}
+          ref={refs.drumRef}
+        >
+          {}
+          {!isSwitchOn && <AlienSvg_LG />}
+          <PcSvg />
+          <div
+            className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
+          >
+            <Link
+              href="http://quiz-app-laravel-moriyama.xyz/login"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                className={`thumbnail_img ${imageState}`}
+                src="/images/webQuiz.png"
+                alt="写真サイトの画像"
+                width={310}
+                height={173}
+              />
+            </Link>
+          </div>
+          <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>
+            VISIT
+          </p>
+          <div className="creation_item_about">
+            <div className="creation_item_title">
+              WEB QUIZ
+            </div>
+            <div className="creation_item_type">
+              <span>APPLICATION</span>
+              <span>レスポンシブ</span>
+            </div>
+            <div className="creation_item_skills">
+              <span>PHP</span>
+              <span>Laravel</span>
+            </div>
+            <div className="creation_item_description">
+              webクイズアプリ
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
   );
