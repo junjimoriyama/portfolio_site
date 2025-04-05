@@ -199,7 +199,7 @@ export const Background: React.FC = () => {
       <div className="rocket">{!isSwitchOn && <RocketSvg />}</div>
       <div className="ufo">{!isSwitchOn && <UFOSvg />}</div>
       <div className="astronaut">{!isSwitchOn && <AstronautSvg />}</div>
-      <div className="neptune">{!isSwitchOn && <NeptuneSvg />}</div>
+      {/* <div className="neptune">{!isSwitchOn && <NeptuneSvg />}</div> */}
     </>
   );
 };
