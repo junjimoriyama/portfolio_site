@@ -41,6 +41,7 @@ export const Creation = () => {
     superMarketRef: useRef<HTMLLIElement | null>(null),
     kPhotoRef: useRef<HTMLLIElement | null>(null),
     drumRef: useRef<HTMLLIElement | null>(null),
+    quizRef: useRef<HTMLLIElement | null>(null),
     titleRef: useRef<HTMLDivElement | null>(null),
   };
 
@@ -51,6 +52,7 @@ export const Creation = () => {
   const [isSuperMarketVisible, setIsSuperMarketVisible] = useState(false);
   const [isKPhotoVisible, setIsKPhotoVisibleVisible] = useState(false);
   const [isDrumVisible, setIsDrumVisible] = useState(false);
+  const [isQuizVisible, setIsQuizVisible] = useState(false);
   const [isTitleVisible, setIsTitleVisible] = useState(false);
 
   // intersectionObserver
@@ -70,6 +72,9 @@ export const Creation = () => {
     threshold: 0.5,
   });
   useIntersectionObserver(refs.drumRef, setIsDrumVisible, {
+    threshold: 0.5,
+  });
+  useIntersectionObserver(refs.quizRef, setIsQuizVisible, {
     threshold: 0.5,
   });
   useIntersectionObserver(refs.titleRef, setIsTitleVisible, {
@@ -399,10 +404,10 @@ export const Creation = () => {
         </li>
 
 
-        {/* drum school */}
+        {/* web quiz */}
         <li
-          className={`creation_item ${isDrumVisible ? "isVisible" : ""}`}
-          ref={refs.drumRef}
+          className={`creation_item ${isQuizVisible ? "isVisible" : ""}`}
+          ref={refs.quizRef}
         >
           {}
           {!isSwitchOn && <AlienSvg_LG />}
