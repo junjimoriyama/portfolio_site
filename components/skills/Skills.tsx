@@ -169,10 +169,17 @@ export const Skills = () => {
           ref={refs.PHPRef}
         >
           <p className="skill_name">PHP</p>
-          <img
-            className="skill_image"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
-          />
+          <div className="skill_images">
+            <img
+              className="skill_image"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+            />
+            <img
+              className="skill_image"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
+            />
+          </div>
+
           <p className="skill_description">
             PHPの基本的な文法に加えて、Laravelを用いたルーティングやコントローラーの実装、データベースとの連携を通じたCRUD処理（登録・表示・更新・削除）にも対応できます。
           </p>

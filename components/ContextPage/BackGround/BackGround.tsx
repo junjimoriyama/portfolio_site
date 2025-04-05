@@ -19,7 +19,7 @@ import { MarseSvg } from "@/assets/svg/MarseSvg";
 import { AstronautSvg } from "@/assets/svg/AstronautSvg";
 // style
 import "./Background.scss";
-import { NeptuneSvg } from "@/assets/svg/NeptuneSvg";
+// import { NeptuneSvg } from "@/assets/svg/NeptuneSvg";
 // import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 
