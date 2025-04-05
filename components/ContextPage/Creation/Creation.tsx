@@ -210,58 +210,6 @@ export const Creation = () => {
           </div>
         </li>
 
-        {/* Todo　App */}
-        <li
-          className={`creation_item ${isTodoVisible ? "isVisible" : ""}`}
-          ref={refs.todoRef}
-        >
-          {!isSwitchOn && <AlienSvg_LG />}
-          <PcSvg />
-          <div
-            className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
-          >
-            <Link
-              href="https://task-management-lake-nine.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Image
-                className={`thumbnail_img ${imageState}`}
-                src="/images/todo.png"
-                alt="todoの画像"
-                width={310}
-                height={173}
-              />
-            </Link>
-          </div>
-          <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>
-            VISIT
-          </p>
-          <div className="creation_item_about">
-            <div className="creation_item_title">TODO APP</div>
-            <div className="creation_item_type">
-              <span>APPLICATION</span>
-            </div>
-            <div className="creation_item_skills">
-              <span>TypeScript</span>
-              <span>Nuxt.js</span>
-              <span>Vue.js</span>
-            </div>
-            <div className="creation_item_description">
-              TODOリスト管理アプリ<span>(個人開発・学習用)</span>
-            </div>
-            <div className="creation_item_git">
-              <Link
-                href="https://github.com/junjimoriyama/task_management"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {/* <GitIcon /> */}
-              </Link>
-            </div>
-          </div>
-        </li>
-
         {/* SUPER MARKET */}
         <li
           className={`creation_item ${isSuperMarketVisible ? "isVisible" : ""}`}
@@ -310,6 +258,54 @@ export const Creation = () => {
               >
                 {/* <GitIcon /> */}
               </Link>
+            </div>
+          </div>
+        </li>
+
+
+
+        {/* web quiz */}
+        <li
+          className={`creation_item ${isQuizVisible ? "isVisible" : ""}`}
+          ref={refs.quizRef}
+        >
+          {}
+          {!isSwitchOn && <AlienSvg_LG />}
+          <PcSvg />
+          <div
+            className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
+          >
+            <Link
+              href="http://quiz-app-laravel-moriyama.xyz/login"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                className={`thumbnail_img ${imageState}`}
+                src="/images/webQuiz.png"
+                alt="写真サイトの画像"
+                width={310}
+                height={173}
+              />
+            </Link>
+          </div>
+          <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>
+            VISIT
+          </p>
+          <div className="creation_item_about">
+            <div className="creation_item_title">
+              WEB QUIZ
+            </div>
+            <div className="creation_item_type">
+              <span>APPLICATION</span>
+              <span>レスポンシブ</span>
+            </div>
+            <div className="creation_item_skills">
+              <span>PHP</span>
+              <span>Laravel</span>
+            </div>
+            <div className="creation_item_description">
+              webクイズアプリ<span>(個人開発・学習用)</span>
             </div>
           </div>
         </li>
@@ -403,27 +399,25 @@ export const Creation = () => {
           </div>
         </li>
 
-
-        {/* web quiz */}
+        {/* Todo　App */}
         <li
-          className={`creation_item ${isQuizVisible ? "isVisible" : ""}`}
-          ref={refs.quizRef}
+          className={`creation_item ${isTodoVisible ? "isVisible" : ""}`}
+          ref={refs.todoRef}
         >
-          {}
           {!isSwitchOn && <AlienSvg_LG />}
           <PcSvg />
           <div
             className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
           >
             <Link
-              href="http://quiz-app-laravel-moriyama.xyz/login"
+              href="https://task-management-lake-nine.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Image
                 className={`thumbnail_img ${imageState}`}
-                src="/images/webQuiz.png"
-                alt="写真サイトの画像"
+                src="/images/todo.png"
+                alt="todoの画像"
                 width={310}
                 height={173}
               />
@@ -433,19 +427,26 @@ export const Creation = () => {
             VISIT
           </p>
           <div className="creation_item_about">
-            <div className="creation_item_title">
-              WEB QUIZ
-            </div>
+            <div className="creation_item_title">TODO APP</div>
             <div className="creation_item_type">
               <span>APPLICATION</span>
-              <span>レスポンシブ</span>
             </div>
             <div className="creation_item_skills">
-              <span>PHP</span>
-              <span>Laravel</span>
+              <span>TypeScript</span>
+              <span>Nuxt.js</span>
+              <span>Vue.js</span>
             </div>
             <div className="creation_item_description">
-              webクイズアプリ<span>(個人開発・学習用)</span>
+              TODOリスト管理アプリ<span>(個人開発・学習用)</span>
+            </div>
+            <div className="creation_item_git">
+              <Link
+                href="https://github.com/junjimoriyama/task_management"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {/* <GitIcon /> */}
+              </Link>
             </div>
           </div>
         </li>
