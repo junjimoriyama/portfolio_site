@@ -172,7 +172,7 @@ export const Skills = () => {
           </div>
 
           <p className="skill_description">
-            PHPの基本的な文法に加えて、Laravelを用いたルーティングやコントローラーの実装、データベースとの連携を通じたCRUD処理（登録・表示・更新・削除）にも対応できます。
+            PHPの基本的な文法に加えて、Laravelを用いたルーティングやコントローラーの実装、データベースとの連携を通じたCRUD処理（登録・表示・更新・削除）にも対応できます。(Ruby on Railsも対応可です。)
           </p>
         </li>
 
