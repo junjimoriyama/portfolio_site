@@ -199,18 +199,21 @@ export const Skills = () => {
           </p>
         </li>
 
-          {/* SCSS */}
-          <li
+        {/* SCSS */}
+        <li
           className={`skills_item ${isSCSSVisible ? "isVisible" : ""}`}
           ref={refs.SCSSRef}
         >
           <p className="skill_name">Docker</p>
+
           <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain-wordmark.svg"
             className="skill_image"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
           />
+
           <p className="skill_description">
-          Dockerの基本的なコマンド操作に加えて、コンテナの起動・停止、ボリュームやネットワークの設定、Docker Composeを用いた開発環境の構築にも対応できます。
+            Dockerの基本的なコマンド操作に加えて、コンテナの起動・停止、ボリュームやネットワークの設定、Docker
+            Composeを用いた開発環境の構築にも対応できます。
           </p>
         </li>
 
