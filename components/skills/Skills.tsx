@@ -87,13 +87,19 @@ export const Skills = () => {
           className={`skills_item ${isCSSVisible ? "isVisible" : ""}`}
           ref={refs.CSSRef}
         >
-          <p className="skill_name">CSS</p>
-          <img
-            className="skill_image"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
-          />
+          <p className="skill_name">CSS / SCSS</p>
+          <div className="skill_images">
+            <img
+              className="skill_image"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+            />
+            <img
+              className="skill_image"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg"
+            />
+          </div>
           <p className="skill_description">
-            CSSによる基本的なスタイリングから、レイアウト設計、レスポンシブ対応、アニメーション表現、効率的な設計まで幅広く対応できます。さらに、CSS変数を活用することで、スタイルの一括管理や保守性の高い設計にも対応しています。
+            CSSは基本的なスタイリングからレイアウト、レスポンシブ、アニメーションまで幅広く対応でき、CSS変数で保守性の高い設計も可能です。SCSSでは、変数管理やネスト、ミックスインを活用して、より効率的で再利用性の高いスタイル設計が行えます。
           </p>
         </li>
 
@@ -115,21 +121,6 @@ export const Skills = () => {
           </div>
           <p className="skill_description">
             ユーザー操作に応じたアニメーションの制御や、APIを使った非同期通信、ローカルストレージへのデータ保存、イベント処理による動的なUIの実装など、基本から応用まで幅広く対応できます。また、型定義によって、安全性と保守性の高いコード設計にも対応しています。
-          </p>
-        </li>
-
-        {/* SCSS */}
-        <li
-          className={`skills_item ${isSCSSVisible ? "isVisible" : ""}`}
-          ref={refs.SCSSRef}
-        >
-          <p className="skill_name">SCSS</p>
-          <img
-            className="skill_image"
-            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg"
-          />
-          <p className="skill_description">
-            SCSSでは、色やサイズを変数でまとめて管理したり、スタイルを繰り返し自動生成することができます。また、ネストを使って階層構造をわかりやすく整理したり、ミックスインで共通スタイルを使い回すこともでき、効率よくスタイルを組み立てられます。
           </p>
         </li>
 
@@ -208,6 +199,21 @@ export const Skills = () => {
           </p>
         </li>
 
+          {/* SCSS */}
+          <li
+          className={`skills_item ${isSCSSVisible ? "isVisible" : ""}`}
+          ref={refs.SCSSRef}
+        >
+          <p className="skill_name">Docker</p>
+          <img
+            className="skill_image"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+          />
+          <p className="skill_description">
+          Dockerの基本的なコマンド操作に加えて、コンテナの起動・停止、ボリュームやネットワークの設定、Docker Composeを用いた開発環境の構築にも対応できます。
+          </p>
+        </li>
+
         {/* GitHub */}
         <li
           className={`skills_item ${isGitHubVisible ? "isVisible" : ""}`}
@@ -223,3 +229,36 @@ export const Skills = () => {
     </div>
   );
 };
+
+{
+  /* CSS */
+}
+//    <li
+//    className={`skills_item ${isCSSVisible ? "isVisible" : ""}`}
+//    ref={refs.CSSRef}
+//  >
+//    <p className="skill_name">CSS</p>
+//    <img
+//      className="skill_image"
+//      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+//    />
+//    <p className="skill_description">
+//      CSSによる基本的なスタイリングから、レイアウト設計、レスポンシブ対応、アニメーション表現、効率的な設計まで幅広く対応できます。さらに、CSS変数を活用することで、スタイルの一括管理や保守性の高い設計にも対応しています。
+//    </p>
+//  </li>
+
+{
+  /* <li
+className={`skills_item ${isSCSSVisible ? "isVisible" : ""}`}
+ref={refs.SCSSRef}
+>
+<p className="skill_name">SCSS</p>
+<img
+  className="skill_image"
+  src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg"
+/>
+<p className="skill_description">
+  SCSSでは、色やサイズを変数でまとめて管理したり、スタイルを繰り返し自動生成することができます。また、ネストを使って階層構造をわかりやすく整理したり、ミックスインで共通スタイルを使い回すこともでき、効率よくスタイルを組み立てられます。
+</p>
+</li> */
+}
