@@ -13,12 +13,16 @@ import { PcSvg } from "@/assets/svg/PcSvg";
 // style
 import "./Creation.scss";
 import { AlienSvg_DG, AlienSvg_G, AlienSvg_LG } from "@/assets/svg/Alien";
+import { ArrowSvg } from "@/assets/svg/arrow";
 
 export const Creation = () => {
   const { isSwitchOn } = useSwitchContext();
 
   // 初めはImageタグの追加クラスは空にする
   const [imageState, setImageState] = useState("");
+
+  // アーキテクチャ見せるか
+  const [imgVisible, setImgVisible] = useState(false);
 
   useEffect(() => {
     // もしスイッチがONであれば
@@ -83,6 +87,28 @@ export const Creation = () => {
 
   return (
     <div className="creation">
+      <img
+        className={`creation_architecture_img ${
+          imgVisible ? "isVisible" : ""
+        } `}
+        src="images/stuttering_job_architecture.png"
+        alt="アーキテクチャ"
+      />
+      <div
+        className={`creation_architecture_mask ${
+          imgVisible ? "isVisible" : ""
+        } `}
+        onClick={() => setImgVisible(false)}
+      ></div>
+      <div
+        className={`creation_architecture_mask_btn ${
+          imgVisible ? "isVisible" : ""
+        } `}
+        onClick={() => setImgVisible(false)}
+      >
+        close
+      </div>
+
       <div
         className={`creation_title ${isTitleVisible ? "isVisible" : ""}`}
         ref={refs.titleRef}
@@ -145,6 +171,13 @@ export const Creation = () => {
             <div className="creation_item_description">
               働く吃音ある方の体験談集<span>(テスト運用中)</span>
             </div>
+            <div
+              className="creation_item_architecture"
+              onClick={() => setImgVisible(!imgVisible)}
+            >
+              アーキテクチャ
+              <span><ArrowSvg/></span>
+            </div>
             <div className="creation_item_git">
               <Link
                 href="https://github.com/junjimoriyama/stuttering-job"
@@ -156,7 +189,6 @@ export const Creation = () => {
             </div>
           </div>
         </li>
-
         {/* PHOTO SITE */}
         <li
           className={`creation_item ${isPhotoSiteVisible ? "isVisible" : ""}`}
@@ -262,8 +294,6 @@ export const Creation = () => {
           </div>
         </li>
 
-
-
         {/* web quiz */}
         <li
           className={`creation_item ${isQuizVisible ? "isVisible" : ""}`}
@@ -293,9 +323,7 @@ export const Creation = () => {
             VISIT
           </p>
           <div className="creation_item_about">
-            <div className="creation_item_title">
-              WEB QUIZ
-            </div>
+            <div className="creation_item_title">WEB QUIZ</div>
             <div className="creation_item_type">
               <span>APPLICATION</span>
               <span>レスポンシブ</span>
