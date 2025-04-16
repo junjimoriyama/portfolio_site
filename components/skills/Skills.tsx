@@ -140,7 +140,7 @@ export const Skills = () => {
             src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
           />
           <p className="skill_description">
-            コンポーネントの設計や状態管理などの基本からHooksを使ったデータ管理やイベント処理、API連携、Reduxによるグローバルな状態管理まで、実践的なアプリ開発に必要な機能を一通り実装できます。
+            コンポーネントの設計や状態管理などの基本からHooksを使ったデータ管理やイベント処理、API連携、Reduxによるグローバルな状態管理まで、実践的なアプリ開発に必要な機能を一通り実装できます。(Vue.jsの基本操作も対応可です。)
           </p>
         </li>
 
