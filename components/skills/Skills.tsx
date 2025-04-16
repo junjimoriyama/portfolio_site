@@ -87,7 +87,7 @@ export const Skills = () => {
           className={`skills_item ${isCSSVisible ? "isVisible" : ""}`}
           ref={refs.CSSRef}
         >
-          <p className="skill_name">CSS / SCSS / tailwindcss</p>
+          <p className="skill_name">CSS / SCSS / TailwindCSS</p>
           <div className="skill_images">
             <img
               className="skill_image"
@@ -104,7 +104,7 @@ export const Skills = () => {
             />
           </div>
           <p className="skill_description">
-            CSSは基本的なスタイリングからレイアウト、レスポンシブ、アニメーションまで幅広く対応できます。SCSSでは、変数管理やネスト、ミックスインを活用して、より効率的で再利用性の高いスタイル設計が行えます。Tailwind CSSは、基本的な記法や操作が可能です。
+            CSSは基本的なスタイリングからレイアウト、レスポンシブ、アニメーションまで幅広く対応できます。SCSSでは、変数管理やネスト、ミックスインを活用して、より効率的で再利用性の高いスタイル設計が行えます。TailwindCSSは、基本的な記法や操作が可能です。
           </p>
         </li>
 
