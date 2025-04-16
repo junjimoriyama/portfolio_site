@@ -87,7 +87,7 @@ export const Skills = () => {
           className={`skills_item ${isCSSVisible ? "isVisible" : ""}`}
           ref={refs.CSSRef}
         >
-          <p className="skill_name">CSS / SCSS</p>
+          <p className="skill_name">CSS / SCSS / tailwindcss</p>
           <div className="skill_images">
             <img
               className="skill_image"
@@ -97,9 +97,14 @@ export const Skills = () => {
               className="skill_image"
               src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg"
             />
+
+            <img
+              className="skill_image"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+            />
           </div>
           <p className="skill_description">
-            CSSは基本的なスタイリングからレイアウト、レスポンシブ、アニメーションまで幅広く対応でき、CSS変数で保守性の高い設計も可能です。SCSSでは、変数管理やネスト、ミックスインを活用して、より効率的で再利用性の高いスタイル設計が行えます。
+            CSSは基本的なスタイリングからレイアウト、レスポンシブ、アニメーションまで幅広く対応できます。SCSSでは、変数管理やネスト、ミックスインを活用して、より効率的で再利用性の高いスタイル設計が行えます。Tailwind CSSは、基本的な記法や操作が可能です。
           </p>
         </li>
 
@@ -172,7 +177,8 @@ export const Skills = () => {
           </div>
 
           <p className="skill_description">
-            PHPの基本的な文法に加えて、Laravelを用いたルーティングやコントローラーの実装、データベースとの連携を通じたCRUD処理（登録・表示・更新・削除）にも対応できます。(Ruby on Railsも対応可です。)
+            PHPの基本的な文法に加えて、Laravelを用いたルーティングやコントローラーの実装、データベースとの連携を通じたCRUD処理（登録・表示・更新・削除）にも対応できます。(Ruby
+            on Railsも対応可です。)
           </p>
         </li>
 
