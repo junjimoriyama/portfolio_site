@@ -205,7 +205,24 @@ export const Skills = () => {
           </p>
         </li>
 
-        {/* SCSS */}
+        {/* Docker */}
+        <li
+          className={`skills_item ${isSCSSVisible ? "isVisible" : ""}`}
+          ref={refs.SCSSRef}
+        >
+          <p className="skill_name">AWS</p>
+
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg"
+            className="skill_image"
+          />
+
+          <p className="skill_description">
+            VPCやEC2、S3、RDSといったAWSの主要サービスについて、ネットワーク構成の設定やインスタンスの起動、ストレージの作成、データベースの立ち上げなど、基本的な構築・運用に対応できます。
+          </p>
+        </li>
+
+        {/* Docker */}
         <li
           className={`skills_item ${isSCSSVisible ? "isVisible" : ""}`}
           ref={refs.SCSSRef}
