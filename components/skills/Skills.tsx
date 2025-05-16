@@ -18,6 +18,8 @@ export const Skills = () => {
     NextRef: useRef<HTMLLIElement | null>(null),
     PHPRef: useRef<HTMLLIElement | null>(null),
     DesignRef: useRef<HTMLLIElement | null>(null),
+    AwsRef: useRef<HTMLLIElement | null>(null),
+    DokerRef: useRef<HTMLLIElement | null>(null),
     GitHubRef: useRef<HTMLLIElement | null>(null),
   };
 
@@ -25,11 +27,12 @@ export const Skills = () => {
   const [isHTMLVisible, setIsHTMLVisible] = useState(false);
   const [isCSSVisible, setIsCSSVisible] = useState(false);
   const [isJavaScriptVisible, setIsJavaScriptVisible] = useState(false);
-  const [isSCSSVisible, setIsSCSSVisible] = useState(false);
   const [isReactVisible, setIsReactVisible] = useState(false);
   const [isNextVisible, setIsNextVisible] = useState(false);
   const [isPHPVisible, setIsPHPVisible] = useState(false);
   const [isDesignVisible, setIsDesignVisible] = useState(false);
+  const [isAwsVisible, setIsAwsVisible] = useState(false);
+  const [isDokerVisible, setIsDokerVisible] = useState(false);
   const [isGitHubVisible, setIsGitHubVisible] = useState(false);
 
   // intersectionObserver
@@ -42,9 +45,6 @@ export const Skills = () => {
   useIntersectionObserver(refs.javaScriptRef, setIsJavaScriptVisible, {
     threshold: 0.5,
   });
-  useIntersectionObserver(refs.SCSSRef, setIsSCSSVisible, {
-    threshold: 0.5,
-  });
   useIntersectionObserver(refs.ReactRef, setIsReactVisible, {
     threshold: 0.5,
   });
@@ -52,6 +52,12 @@ export const Skills = () => {
     threshold: 0.5,
   });
   useIntersectionObserver(refs.PHPRef, setIsPHPVisible, {
+    threshold: 0.5,
+  });
+  useIntersectionObserver(refs.AwsRef, setIsAwsVisible, {
+    threshold: 0.5,
+  });
+  useIntersectionObserver(refs.DokerRef, setIsDokerVisible, {
     threshold: 0.5,
   });
   useIntersectionObserver(refs.DesignRef, setIsDesignVisible, {
@@ -205,10 +211,10 @@ export const Skills = () => {
           </p>
         </li>
 
-        {/* Docker */}
+        {/* aws */}
         <li
-          className={`skills_item ${isSCSSVisible ? "isVisible" : ""}`}
-          ref={refs.SCSSRef}
+          className={`skills_item ${isAwsVisible ? "isVisible" : ""}`}
+          ref={refs.AwsRef}
         >
           <p className="skill_name">AWS</p>
 
@@ -224,8 +230,8 @@ export const Skills = () => {
 
         {/* Docker */}
         <li
-          className={`skills_item ${isSCSSVisible ? "isVisible" : ""}`}
-          ref={refs.SCSSRef}
+          className={`skills_item ${isDokerVisible ? "isVisible" : ""}`}
+          ref={refs.DokerRef}
         >
           <p className="skill_name">Docker</p>
 
