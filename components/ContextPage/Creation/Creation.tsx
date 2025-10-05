@@ -1,3 +1,4 @@
+// 全て削除
 // "use client";
 
 // // next
