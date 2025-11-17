@@ -197,7 +197,7 @@ export const Skills = () => {
           <div className="skill_images">
             <img
               className="skill_image"
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-line.svg"
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-original.svg"
             />
             <img
               className="skill_image"
