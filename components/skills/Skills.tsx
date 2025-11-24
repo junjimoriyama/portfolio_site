@@ -21,6 +21,9 @@ export const Skills = () => {
     AwsRef: useRef<HTMLLIElement | null>(null),
     DokerRef: useRef<HTMLLIElement | null>(null),
     GitHubRef: useRef<HTMLLIElement | null>(null),
+    CMSRef: useRef<HTMLLIElement | null>(null),
+    GoogleWorkspaceRef: useRef<HTMLLIElement | null>(null),
+    FigmaRef: useRef<HTMLLIElement | null>(null),
   };
 
   // state
@@ -29,11 +32,13 @@ export const Skills = () => {
   const [isJavaScriptVisible, setIsJavaScriptVisible] = useState(false);
   const [isReactVisible, setIsReactVisible] = useState(false);
   const [isNextVisible, setIsNextVisible] = useState(false);
-  const [isPHPVisible, setIsPHPVisible] = useState(false);
   const [isDesignVisible, setIsDesignVisible] = useState(false);
   const [isAwsVisible, setIsAwsVisible] = useState(false);
   const [isDokerVisible, setIsDokerVisible] = useState(false);
   const [isGitHubVisible, setIsGitHubVisible] = useState(false);
+  const [isCMSVisible, setIsCMSVisible] = useState(false);
+  const [isGoogleWorkspaceVisible, setIsGoogleWorkspaceVisible] = useState(false);
+  const [isFigmaVisible, setIsFigmaVisible] = useState(false);
 
   // intersectionObserver
   useIntersectionObserver(refs.HTMLRef, setIsHTMLVisible, {
@@ -51,9 +56,6 @@ export const Skills = () => {
   useIntersectionObserver(refs.NextRef, setIsNextVisible, {
     threshold: 0.5,
   });
-  useIntersectionObserver(refs.PHPRef, setIsPHPVisible, {
-    threshold: 0.5,
-  });
   useIntersectionObserver(refs.AwsRef, setIsAwsVisible, {
     threshold: 0.5,
   });
@@ -64,6 +66,19 @@ export const Skills = () => {
     threshold: 0.5,
   });
   useIntersectionObserver(refs.GitHubRef, setIsGitHubVisible, {
+    threshold: 0.5,
+  });
+  useIntersectionObserver(refs.CMSRef, setIsCMSVisible, {
+    threshold: 0.5,
+  });
+  useIntersectionObserver(
+    refs.GoogleWorkspaceRef,
+    setIsGoogleWorkspaceVisible,
+    {
+      threshold: 0.5,
+    }
+  );
+  useIntersectionObserver(refs.FigmaRef, setIsFigmaVisible, {
     threshold: 0.5,
   });
 
@@ -166,7 +181,7 @@ export const Skills = () => {
         </li>
 
         {/* PHP */}
-        <li
+        {/* <li
           className={`skills_item ${isPHPVisible ? "isVisible" : ""}`}
           ref={refs.PHPRef}
         >
@@ -186,7 +201,7 @@ export const Skills = () => {
             PHPの基本的な文法に加えて、Laravelを用いたルーティングやコントローラーの実装、データベースとの連携を通じたCRUD処理（登録・表示・更新・削除）にも対応できます。(Ruby
             on Railsも対応可です。)
           </p>
-        </li>
+        </li> */}
 
         {/* Illustrator / Photoshop */}
         <li
@@ -254,7 +269,58 @@ export const Skills = () => {
           <p className="skill_name">GitHub</p>
           <i className="devicon-github-original"></i>
           <p className="skill_description">
-            個人開発や受託案件でGitを使っており、リポジトリのクローンから、ファイルの変更管理、コミット、リモートリポジトリへのプッシュといった基本的な操作に対応できます。
+          個人開発・受託案件だけでなく、チーム開発でもGitを問題なく運用しています。
+ブランチ切り替えやコミット、プッシュ、プルリク作成など、共同開発に必要な基本操作を一通り習得しています。
+          </p>
+        </li>
+
+        {/* Figma */}
+        <li
+          className={`skills_item ${isFigmaVisible ? "isVisible" : ""}`}
+          ref={refs.FigmaRef}
+        >
+          <p className="skill_name">Figma</p>
+          <img
+            className="skill_image"
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+          />
+          <p className="skill_description">
+            画面のワイヤーフレーム作成や簡単なUIデザイン、コンポーネントの配置など、基本的な操作は一通り行えます。
+            また、他メンバーのデザインを確認しながら軽微な修正を行うことも可能です。
+          </p>
+        </li>
+
+        {/* CMS(WordPress/microCMS) */}
+        <li
+          className={`skills_item ${
+            isCMSVisible ? "isVisible" : ""
+          }`}
+          ref={refs.CMSRef}
+        >
+          <p className="skill_name">CMS(WordPress/microCMS)</p>
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg"
+            className="skill_image wordpress_icon"
+          />
+          <p className="skill_description">
+          WordPressではテーマのカスタマイズやプラグインの導入・設定を通して、ブログサイトやコーポレートサイトの構築ができます。microCMSはヘッドレスCMSとして基本設定、管理を行うことができます。
+          </p>
+        </li>
+
+        {/* Google Workspace */}
+        <li
+          className={`skills_item ${
+            isGoogleWorkspaceVisible ? "isVisible" : ""
+          }`}
+          ref={refs.GoogleWorkspaceRef}
+        >
+          <p className="skill_name">Google Workspace</p>
+          <img
+            src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg"
+            className="skill_image"
+          />
+          <p className="skill_description">
+            Gmail、Googleカレンダー、ドライブ、スプレッドシート、ドキュメントを日常的に活用しており、共有設定や権限管理、スプレッドシートでの簡易集計・管理表の作成など、チームでの情報共有やタスク管理にも対応できます。
           </p>
         </li>
       </ul>

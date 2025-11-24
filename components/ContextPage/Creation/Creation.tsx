@@ -24,6 +24,8 @@ export const Creation = () => {
 
   // アーキテクチャ見せるか
   const [imgVisible, setImgVisible] = useState(false);
+  // DTP見せるか
+  const [dtpVisible, setDtpVisible] = useState(false);
 
   useEffect(() => {
     // もしスイッチがONであれば
@@ -34,6 +36,19 @@ export const Creation = () => {
       setImageState("isOff");
     }
   }, [isSwitchOn, imageState]);
+
+  useEffect(() => {
+    const isModalOpen = imgVisible || dtpVisible;
+  
+    if (isModalOpen) {
+      const originalStyle = window.getComputedStyle(document.body).overflow;
+      document.body.style.overflow = "hidden";
+  
+      return () => {
+        document.body.style.overflow = originalStyle;
+      };
+    }
+  }, [imgVisible, dtpVisible]);
 
   // title
   const creationTitle = "ポートフォリオ".split("");
@@ -46,7 +61,8 @@ export const Creation = () => {
     superMarketRef: useRef<HTMLLIElement | null>(null),
     kPhotoRef: useRef<HTMLLIElement | null>(null),
     drumRef: useRef<HTMLLIElement | null>(null),
-    quizRef: useRef<HTMLLIElement | null>(null),
+    dtpRef: useRef<HTMLLIElement | null>(null),
+    // quizRef: useRef<HTMLLIElement | null>(null),
     titleRef: useRef<HTMLDivElement | null>(null),
   };
 
@@ -57,7 +73,8 @@ export const Creation = () => {
   const [isSuperMarketVisible, setIsSuperMarketVisible] = useState(false);
   const [isKPhotoVisible, setIsKPhotoVisibleVisible] = useState(false);
   const [isDrumVisible, setIsDrumVisible] = useState(false);
-  const [isQuizVisible, setIsQuizVisible] = useState(false);
+  const [isDtpVisible, setIsDtpVisible] = useState(false);
+  // const [isQuizVisible, setIsQuizVisible] = useState(false);
   const [isTitleVisible, setIsTitleVisible] = useState(false);
 
   // intersectionObserver
@@ -79,9 +96,12 @@ export const Creation = () => {
   useIntersectionObserver(refs.drumRef, setIsDrumVisible, {
     threshold: 0.5,
   });
-  useIntersectionObserver(refs.quizRef, setIsQuizVisible, {
+  useIntersectionObserver(refs.dtpRef, setIsDtpVisible, {
     threshold: 0.5,
   });
+  // useIntersectionObserver(refs.quizRef, setIsQuizVisible, {
+  //   threshold: 0.5,
+  // });
   useIntersectionObserver(refs.titleRef, setIsTitleVisible, {
     threshold: 0.5,
   });
@@ -106,6 +126,27 @@ export const Creation = () => {
           imgVisible ? "isVisible" : ""
         } `}
         onClick={() => setImgVisible(false)}
+      >
+        close
+      </div>
+      <img
+        className={`creation_dtp_img ${
+          dtpVisible ? "isVisible" : ""
+        } `}
+        src="/images/illustrator_works.png"
+        alt="イラストの画像"
+      />
+      <div
+        className={`creation_dtp_mask ${
+          dtpVisible ? "isVisible" : ""
+        } `}
+        onClick={() => setDtpVisible(false)}
+      ></div>
+      <div
+        className={`creation_dtp_mask_btn ${
+          dtpVisible ? "isVisible" : ""
+        } `}
+        onClick={() => setDtpVisible(false)}
       >
         close
       </div>
@@ -185,7 +226,6 @@ export const Creation = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {/* <GitIcon /> */}
               </Link>
             </div>
           </div>
@@ -229,7 +269,7 @@ export const Creation = () => {
               <span>React</span>
             </div>
             <div className="creation_item_description">
-              個人で撮影した写真ギャラリーサイト
+              私が個人で撮影した写真ギャラリーサイト
             </div>
             <div className="creation_item_git">
               <Link
@@ -296,7 +336,7 @@ export const Creation = () => {
         </li>
 
         {/* web quiz */}
-        <li
+        {/* <li
           className={`creation_item ${isQuizVisible ? "isVisible" : ""}`}
           ref={refs.quizRef}
         >
@@ -337,7 +377,7 @@ export const Creation = () => {
               webクイズアプリ<span>(個人開発・学習用)</span>
             </div>
           </div>
-        </li>
+        </li> */}
 
         {/* K photo */}
         <li
@@ -474,8 +514,36 @@ export const Creation = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {/* <GitIcon /> */}
               </Link>
+            </div>
+          </div>
+        </li>
+        {/* Todo　App */}
+        <li
+          className={`creation_item ${isDtpVisible ? "isVisible" : ""}`}
+          ref={refs.dtpRef}
+        >
+          <div 
+          className="creation_dtp"
+          onClick={() => setDtpVisible(!dtpVisible)}
+          >
+              <img
+                src="/images/illustrator_works.png"
+                className={`creation_item_dtp ${!isSwitchOn && "isGray"}`}
+                alt="イベントのチラシ"
+              />
+            </div>
+          <div className="creation_item_about">
+            <div className="creation_item_title"></div>
+            <div className="creation_item_type">
+              <span>DTP</span>
+            </div>
+            <div className="creation_item_skills">
+              <span>Illustrator</span>
+              <span>Photoshop</span>
+            </div>
+            <div className="creation_item_description">
+              地域イベントのフライヤー
             </div>
           </div>
         </li>
