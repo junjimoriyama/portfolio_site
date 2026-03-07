@@ -269,7 +269,7 @@ export const Creation = () => {
               <span>React</span>
             </div>
             <div className="creation_item_description">
-              私が個人で撮影した写真ギャラリーサイト
+              趣味で撮影した写真ギャラリーサイト
             </div>
             <div className="creation_item_git">
               <Link
