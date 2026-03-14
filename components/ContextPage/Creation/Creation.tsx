@@ -241,7 +241,7 @@ export const Creation = () => {
             className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
           >
             <Link
-              href="https://junji-moriyama.com/"
+              href="https://junji-photosite.uk/"
               target="_blank"
               rel="noopener noreferrer"
             >
