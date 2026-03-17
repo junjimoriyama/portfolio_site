@@ -140,7 +140,7 @@ export const Creation = () => {
         className={`creation_dtp_mask ${
           dtpVisible ? "isVisible" : ""
         } `}
-        onClick={() => setDtpVisible(false)}
+        onClick= {() => setDtpVisible(false)}
       ></div>
       <div
         className={`creation_dtp_mask_btn ${
