@@ -222,7 +222,7 @@ export const Skills = () => {
           <p className="skill_description">
             Illustratorでは、アイコンの作成や図形・文字の配置など基本的な操作に対応でき、前職ではチラシ制作も行ってきました。
             <br />{" "}
-            LightroomやPhotoshopでは、写真の色味・明るさの調整など、基本的な画像加工が可能です。
+            PhotoshopやLightroomでは、写真の色味・明るさの調整など、基本的な画像加工が可能です。
           </p>
         </li>
 
