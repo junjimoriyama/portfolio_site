@@ -7,6 +7,7 @@ import { useSwitchContext } from "@/components/context/switchProvider";
 // svg
 import { CameraSvg } from "@/assets/svg/CameraSvg";
 // style
+// @ts-ignore: CSS module side-effect import (no type declaration)
 import "./Profile.scss";
 import { useRef, useState } from "react";
 

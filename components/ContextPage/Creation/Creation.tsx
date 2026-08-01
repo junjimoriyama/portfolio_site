@@ -12,6 +12,7 @@ import useIntersectionObserver from "@/functions/functions";
 // svg
 import { PcSvg } from "@/assets/svg/PcSvg";
 // style
+// @ts-ignore: scss side-effect import declaration missing in this config
 import "./Creation.scss";
 import { AlienSvg_DG, AlienSvg_G, AlienSvg_LG } from "@/assets/svg/Alien";
 import { ArrowSvg } from "@/assets/svg/arrow";
@@ -61,6 +62,7 @@ export const Creation = () => {
     superMarketRef: useRef<HTMLLIElement | null>(null),
     kPhotoRef: useRef<HTMLLIElement | null>(null),
     drumRef: useRef<HTMLLIElement | null>(null),
+    chatyRef: useRef<HTMLLIElement | null>(null),
     dtpRef: useRef<HTMLLIElement | null>(null),
     // quizRef: useRef<HTMLLIElement | null>(null),
     titleRef: useRef<HTMLDivElement | null>(null),
@@ -73,6 +75,7 @@ export const Creation = () => {
   const [isSuperMarketVisible, setIsSuperMarketVisible] = useState(false);
   const [isKPhotoVisible, setIsKPhotoVisibleVisible] = useState(false);
   const [isDrumVisible, setIsDrumVisible] = useState(false);
+  const [isChatyVisible, setIsChatyVisible] = useState(false);
   const [isDtpVisible, setIsDtpVisible] = useState(false);
   // const [isQuizVisible, setIsQuizVisible] = useState(false);
   const [isTitleVisible, setIsTitleVisible] = useState(false);
@@ -94,6 +97,9 @@ export const Creation = () => {
     threshold: 0.5,
   });
   useIntersectionObserver(refs.drumRef, setIsDrumVisible, {
+    threshold: 0.5,
+  });
+  useIntersectionObserver(refs.chatyRef, setIsChatyVisible, {
     threshold: 0.5,
   });
   useIntersectionObserver(refs.dtpRef, setIsDtpVisible, {
@@ -519,6 +525,56 @@ export const Creation = () => {
           </div>
         </li>
         {/* Todo　App */}
+        <li
+          className={`creation_item ${isChatyVisible ? "isVisible" : ""}`}
+          ref={refs.chatyRef}
+        >
+          {!isSwitchOn && <AlienSvg_DG />}
+          <PcSvg />
+          <div
+            className={`creation_item_image ${isSwitchOn ? "isSwitchOn" : ""}`}
+          >
+            <Link
+              href="https://chattylib.com/library/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                className={`thumbnail_img ${imageState}`}
+                src="/images/chatty.png"
+                alt="chattylibの画像"
+                width={310}
+                height={173}
+              />
+            </Link>
+          </div>
+          <p className={`creation_item_visit ${isSwitchOn ? "isVisible" : ""}`}>
+            VISIT
+          </p>
+          <div className="creation_item_about">
+            <div className="creation_item_title">Chatty Library</div>
+            <div className="creation_item_type">
+              <span>APPLICATION</span>
+            </div>
+            <div className="creation_item_skills">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>Illustrator</span>
+            </div>
+            <div className="creation_item_description">
+              識字障害のある方向け支援サービス
+            </div>
+            <div className="creation_item_git">
+              <Link
+                href="https://github.com/junjimoriyama/task_management"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+              </Link>
+            </div>
+          </div>
+        </li>
+        {/* DTP */}
         <li
           className={`creation_item ${isDtpVisible ? "isVisible" : ""}`}
           ref={refs.dtpRef}
