@@ -303,7 +303,8 @@ export const Skills = () => {
             className="skill_image wordpress_icon"
           />
           <p className="skill_description">
-          WordPressではテーマのカスタマイズやプラグインの導入・設定を通して、ブログサイトやコーポレートサイトの構築ができます。microCMSはヘッドレスCMSとして基本設定、管理を行うことができます。
+          WordPressでは、テーマのカスタマイズやプラグインの導入・設定を通して、ブログからコーポレートサイトまで幅広い構築・運用が可能です。
+          また、PHPを用いた機能拡張や仕様の変更・カスタマイズにも対応できます。microCMSのようなヘッドレスCMSを活用したコンテンツ管理の基盤構築・設定も行えます。
           </p>
         </li>
 
