@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "JUNJI MORIYAMA PORTFORIO",
+  title: "JUNJI MORIYAMA PORTFOLIO",
   description: "森山順司のフロントエンド技術を使ったポートフォリオサイト",
 };
 
