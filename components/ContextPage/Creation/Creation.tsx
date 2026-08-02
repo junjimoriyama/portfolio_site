@@ -590,7 +590,7 @@ export const Creation = () => {
               />
             </div>
           <div className="creation_item_about">
-            <div className="creation_item_title"></div>
+            <div className="creation_item_title">フライヤー</div>
             <div className="creation_item_type">
               <span>DTP</span>
             </div>
