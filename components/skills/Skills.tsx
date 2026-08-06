@@ -84,7 +84,7 @@ export const Skills = () => {
 
   return (
     <div className="skills">
-      <div className="skills_title">できること</div>
+      {/* <div className="skills_title">できること</div> */}
       <ul className="skills_list">
         {/* HTML */}
         {/* <li
