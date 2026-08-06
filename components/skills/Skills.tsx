@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 // functions
 import useIntersectionObserver from "@/functions/functions";
 // style
-import "./Skills.scss";
+// import "./Skills.scss";
 
 export const Skills = () => {
   // refs
@@ -87,7 +87,7 @@ export const Skills = () => {
       <div className="skills_title">できること</div>
       <ul className="skills_list">
         {/* HTML */}
-        <li
+        {/* <li
           className={`skills_item ${isHTMLVisible ? "isVisible" : ""}`}
           ref={refs.HTMLRef}
         >
@@ -101,10 +101,10 @@ export const Skills = () => {
             <br />
             また、フォームのバリデーション、アクセシビリティ対応、data属性を活用したJSとの連携といった応用的な実装にも対応できます。
           </p>
-        </li>
+        </li> */}
 
         {/* CSS */}
-        <li
+        {/* <li
           className={`skills_item ${isCSSVisible ? "isVisible" : ""}`}
           ref={refs.CSSRef}
         >
@@ -127,10 +127,10 @@ export const Skills = () => {
           <p className="skill_description">
             CSSは基本的なスタイリングからレイアウト、レスポンシブ、アニメーションまで幅広く対応できます。SCSSでは、変数管理やネスト、ミックスインを活用して、より効率的で再利用性の高いスタイル設計が行えます。TailwindCSSは、基本的な記法や操作が可能です。
           </p>
-        </li>
+        </li> */}
 
         {/* JavaScript/TypeScript */}
-        <li
+        {/* <li
           className={`skills_item ${isJavaScriptVisible ? "isVisible" : ""}`}
           ref={refs.javaScriptRef}
         >
@@ -148,10 +148,10 @@ export const Skills = () => {
           <p className="skill_description">
             ユーザー操作に応じたアニメーションの制御や、APIを使った非同期通信、ローカルストレージへのデータ保存、イベント処理による動的なUIの実装など、基本から応用まで幅広く対応できます。また、型定義によって、安全性と保守性の高いコード設計にも対応しています。
           </p>
-        </li>
+        </li> */}
 
         {/* React */}
-        <li
+        {/* <li
           className={`skills_item ${isReactVisible ? "isVisible" : ""}`}
           ref={refs.ReactRef}
         >
@@ -163,10 +163,10 @@ export const Skills = () => {
           <p className="skill_description">
             コンポーネントの設計や状態管理などの基本からHooksを使ったデータ管理やイベント処理、API連携、Reduxによるグローバルな状態管理まで、実践的なアプリ開発に必要な機能を一通り実装できます。(Vue.jsの基本操作も対応可です。)
           </p>
-        </li>
+        </li> */}
 
         {/* Next.js */}
-        <li
+        {/* <li
           className={`skills_item ${isNextVisible ? "isVisible" : ""}`}
           ref={refs.NextRef}
         >
@@ -178,7 +178,7 @@ export const Skills = () => {
           <p className="skill_description">
             ページの切り替えやAPIの作成などの基本機能、サーバーサイドでのデータ取得やページごとのレイアウトの切り替え、動的なURLのルーティングなど、Next.jsの機能を使った実用的なサイトやアプリケーション作りにも対応できます。
           </p>
-        </li>
+        </li> */}
 
         {/* PHP */}
         {/* <li
@@ -204,7 +204,7 @@ export const Skills = () => {
         </li> */}
 
         {/* Illustrator / Photoshop */}
-        <li
+        {/* <li
           className={`skills_item ${isDesignVisible ? "isVisible" : ""}`}
           ref={refs.DesignRef}
         >
@@ -224,10 +224,10 @@ export const Skills = () => {
             <br />{" "}
             PhotoshopやLightroomでは、写真の色味・明るさの調整など、基本的な画像加工が可能です。
           </p>
-        </li>
+        </li> */}
 
         {/* aws */}
-        <li
+        {/* <li
           className={`skills_item ${isAwsVisible ? "isVisible" : ""}`}
           ref={refs.AwsRef}
         >
@@ -241,10 +241,10 @@ export const Skills = () => {
           <p className="skill_description">
             VPCやEC2、S3、RDSといったAWSの主要サービスについて、ネットワーク構成の設定やインスタンスの起動、ストレージの作成、データベースの立ち上げなど、基本的な構築・運用に対応できます。
           </p>
-        </li>
+        </li> */}
 
         {/* Docker */}
-        <li
+        {/* <li
           className={`skills_item ${isDokerVisible ? "isVisible" : ""}`}
           ref={refs.DokerRef}
         >
@@ -259,10 +259,10 @@ export const Skills = () => {
             Dockerの基本的なコマンド操作に加えて、コンテナの起動・停止、ボリュームやネットワークの設定、Docker
             Composeを用いた開発環境の構築にも対応できます。
           </p>
-        </li>
+        </li> */}
 
         {/* GitHub */}
-        <li
+        {/* <li
           className={`skills_item ${isGitHubVisible ? "isVisible" : ""}`}
           ref={refs.GitHubRef}
         >
@@ -272,10 +272,10 @@ export const Skills = () => {
           個人開発・受託案件だけでなく、チーム開発でもGitを問題なく運用しています。
 ブランチ切り替えやコミット、プッシュ、プルリク作成など、共同開発に必要な基本操作を一通り習得しています。
           </p>
-        </li>
+        </li> */}
 
         {/* Figma */}
-        <li
+        {/* <li
           className={`skills_item ${isFigmaVisible ? "isVisible" : ""}`}
           ref={refs.FigmaRef}
         >
@@ -288,10 +288,10 @@ export const Skills = () => {
             画面のワイヤーフレーム作成や簡単なUIデザイン、コンポーネントの配置など、基本的な操作は一通り行えます。
             また、他メンバーのデザインを確認しながら軽微な修正を行うことも可能です。
           </p>
-        </li>
+        </li> */}
 
         {/* CMS(WordPress/microCMS) */}
-        <li
+        {/* <li
           className={`skills_item ${
             isCMSVisible ? "isVisible" : ""
           }`}
@@ -306,10 +306,10 @@ export const Skills = () => {
           WordPressでは、テーマのカスタマイズやプラグインの導入・設定を通して、ブログからコーポレートサイトまで幅広い構築・運用が可能です。
           また、PHPを用いた機能拡張や仕様の変更・カスタマイズにも対応できます。microCMSのようなヘッドレスCMSを活用したコンテンツ管理の基盤構築・設定も行えます。
           </p>
-        </li>
+        </li> */}
 
         {/* Google Workspace */}
-        <li
+        {/* <li
           className={`skills_item ${
             isGoogleWorkspaceVisible ? "isVisible" : ""
           }`}
@@ -323,7 +323,7 @@ export const Skills = () => {
           <p className="skill_description">
             Gmail、Googleカレンダー、ドライブ、スプレッドシート、ドキュメントを日常的に活用しており、共有設定や権限管理、スプレッドシートでの簡易集計・管理表の作成など、チームでの情報共有やタスク管理にも対応できます。
           </p>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

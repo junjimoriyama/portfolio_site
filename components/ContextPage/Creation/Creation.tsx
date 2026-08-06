@@ -559,7 +559,7 @@ export const Creation = () => {
             <div className="creation_item_skills">
               <span>HTML</span>
               <span>CSS</span>
-              <span>Illustrator</span>
+              {/* <span>Illustrator</span> */}
             </div>
             <div className="creation_item_description">
               識字障害のある方向け支援サービス
@@ -575,7 +575,7 @@ export const Creation = () => {
           </div>
         </li>
         {/* DTP */}
-        <li
+        {/* <li
           className={`creation_item ${isDtpVisible ? "isVisible" : ""}`}
           ref={refs.dtpRef}
         >
@@ -602,7 +602,7 @@ export const Creation = () => {
               地域イベントのフライヤー
             </div>
           </div>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
